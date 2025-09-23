@@ -122,7 +122,7 @@ const Navigation = () => {
                     <li key={index}>
                       <a 
                         href="#"
-                        className="text-nav-foreground hover:text-nav-hover transition-colors duration-200 text-base font-light block py-2"
+                        className="text-nav-foreground hover:text-nav-hover transition-colors duration-200 text-sm font-light block py-2"
                       >
                         {subItem}
                       </a>
