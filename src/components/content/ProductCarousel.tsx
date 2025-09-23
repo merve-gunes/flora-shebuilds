@@ -2,7 +2,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
@@ -123,7 +122,6 @@ const ProductCarousel = () => {
             ))}
           </CarouselContent>
           <CarouselPrevious className="hidden md:flex -left-12 border-none bg-transparent hover:bg-transparent h-8 w-8 rounded-none" />
-          <CarouselNext className="hidden md:flex -right-12 border-none bg-transparent hover:bg-transparent h-8 w-8 rounded-none" />
         </Carousel>
     </section>
   );
