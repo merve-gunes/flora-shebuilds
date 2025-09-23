@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 const Navigation = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   
   // Preload dropdown images for faster display
   useEffect(() => {
@@ -19,6 +20,15 @@ const Navigation = () => {
       img.src = src;
     });
   }, []);
+
+  const popularSearches = [
+    "Gold Rings",
+    "Silver Necklaces", 
+    "Pearl Earrings",
+    "Designer Bracelets",
+    "Wedding Rings",
+    "Vintage Collection"
+  ];
   
   const navItems = [
     { 
@@ -101,6 +111,7 @@ const Navigation = () => {
           <button 
             className="p-2 text-nav-foreground hover:text-nav-hover transition-colors duration-200"
             aria-label="Search"
+            onClick={() => setIsSearchOpen(!isSearchOpen)}
           >
             <Search size={20} />
           </button>
@@ -165,6 +176,45 @@ const Navigation = () => {
                     )}
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Search overlay */}
+      {isSearchOpen && (
+        <div 
+          className="absolute top-full left-0 right-0 bg-nav border-b border-border shadow-lg z-50"
+        >
+          <div className="px-6 py-8">
+            <div className="max-w-2xl mx-auto">
+              {/* Search input */}
+              <div className="relative mb-8">
+                <div className="flex items-center border-b border-border pb-2">
+                  <Search size={20} className="text-nav-foreground mr-3" />
+                  <input
+                    type="text"
+                    placeholder="Search for jewelry..."
+                    className="flex-1 bg-transparent text-nav-foreground placeholder:text-nav-foreground/60 outline-none text-lg"
+                    autoFocus
+                  />
+                </div>
+              </div>
+
+              {/* Popular searches */}
+              <div>
+                <h3 className="text-nav-foreground text-sm font-light mb-4">Popular Searches</h3>
+                <div className="flex flex-wrap gap-3">
+                  {popularSearches.map((search, index) => (
+                    <button
+                      key={index}
+                      className="text-nav-foreground hover:text-nav-hover text-sm font-light py-2 px-4 border border-border rounded-full transition-colors duration-200 hover:border-nav-hover"
+                    >
+                      {search}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
