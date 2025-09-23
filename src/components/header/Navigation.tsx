@@ -31,8 +31,8 @@ const Navigation = () => {
         "Pre-Orders"
       ],
       images: [
-        { src: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=300&h=200&fit=crop", alt: "New Arrivals 1" },
-        { src: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=300&h=200&fit=crop", alt: "New Arrivals 2" }
+        { src: "/arcus-bracelet.png", alt: "Arcus Bracelet", label: "Arcus Bracelet" },
+        { src: "/span-bracelet.png", alt: "Span Bracelet", label: "Span Bracelet" }
       ]
     },
     { 
@@ -142,7 +142,7 @@ const Navigation = () => {
                       alt={image.alt}
                       className="w-full h-full object-cover transition-opacity duration-200 group-hover:opacity-90"
                     />
-                    {activeDropdown === "Shop" && (
+                    {(activeDropdown === "Shop" || activeDropdown === "New in") && (
                       <div className="absolute bottom-2 left-2 text-white text-xs font-light flex items-center gap-1">
                         <span>{image.label}</span>
                         <ArrowRight size={12} />
