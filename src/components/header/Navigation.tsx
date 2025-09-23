@@ -1,5 +1,7 @@
 import { Search, User, ShoppingBag } from "lucide-react";
 import { useState } from "react";
+import ringsImage from "../assets/rings-collection.png";
+import earringsImage from "../assets/earrings-collection.png";
 
 const Navigation = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -16,8 +18,8 @@ const Navigation = () => {
         "Watches"
       ],
       images: [
-        { src: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=300&h=200&fit=crop", alt: "Shop Collection 1" },
-        { src: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=300&h=200&fit=crop", alt: "Shop Collection 2" }
+        { src: ringsImage, alt: "Rings Collection", label: "Rings" },
+        { src: earringsImage, alt: "Earrings Collection", label: "Earrings" }
       ]
     },
     { 
@@ -136,12 +138,15 @@ const Navigation = () => {
                 {navItems
                   .find(item => item.name === activeDropdown)
                   ?.images.map((image, index) => (
-                  <div key={index} className="w-80 h-60 cursor-pointer group">
+                  <div key={index} className="w-80 h-60 cursor-pointer group relative overflow-hidden">
                     <img 
                       src={image.src}
                       alt={image.alt}
                       className="w-full h-full object-cover transition-opacity duration-200 group-hover:opacity-90"
                     />
+                    <div className="absolute bottom-4 left-4 text-white text-sm font-light bg-black/30 px-3 py-1 rounded-sm backdrop-blur-sm">
+                      {image.label}
+                    </div>
                   </div>
                 ))}
               </div>
