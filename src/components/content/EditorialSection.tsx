@@ -4,7 +4,7 @@ const EditorialSection = () => {
   return <section className="w-full mb-16 px-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="space-y-4">
-          <h2 className="text-2xl md:text-3xl font-normal text-foreground leading-tight">
+          <h2 className="text-2xl font-normal text-foreground leading-tight md:text-xl">
             Jewelry Drawn From Shadows and Lines
           </h2>
           <p className="text-sm font-light text-foreground leading-relaxed">Linea was born from the meeting of two minds who saw beauty not just in ornament, but in structure. With backgrounds spanning architecture and fine arts, the founders believed that jewelry could be more than decoration — it could be an extension of space, light, and line.
