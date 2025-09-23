@@ -68,17 +68,8 @@ const products: Product[] = [
 
 const ProductCarousel = () => {
   return (
-    <section className="w-full mb-16 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-8">
-          <h2 className="text-2xl font-medium text-foreground mb-1">
-            Featured Collection
-          </h2>
-          <p className="text-sm font-light text-foreground">
-            Discover our signature pieces crafted with precision and care
-          </p>
-        </div>
-        
+    <section className="w-full mb-16">
+      <div className="w-full">
         <Carousel
           opts={{
             align: "start",
@@ -94,12 +85,13 @@ const ProductCarousel = () => {
               >
                 <Card className="border-none shadow-none bg-transparent">
                   <CardContent className="p-0">
-                    <div className="aspect-square mb-3 overflow-hidden bg-muted/10">
+                    <div className="aspect-square mb-3 overflow-hidden bg-muted/10 relative">
                       <img
                         src={product.image}
                         alt={product.name}
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                       />
+                      <div className="absolute inset-0 bg-black/[0.03]"></div>
                     </div>
                     <div className="space-y-1">
                       <p className="text-xs font-light text-muted-foreground uppercase tracking-wide">
