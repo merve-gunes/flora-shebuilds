@@ -124,7 +124,7 @@ const Navigation = () => {
         <div className="absolute left-1/2 transform -translate-x-1/2">
           <a href="/" className="block">
             <img 
-              src="/LINEA.svg" 
+              src="/LINEA-1.svg" 
               alt="LINEA" 
               className="h-6 w-auto"
             />
