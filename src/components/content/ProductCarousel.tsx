@@ -93,7 +93,7 @@ const ProductCarousel = () => {
                       <div className="absolute inset-0 bg-black/[0.03]"></div>
                     </div>
                     <div className="space-y-1">
-                      <p className="text-sm font-medium text-foreground">
+                      <p className="text-sm font-light text-foreground">
                         {product.category}
                       </p>
                       <div className="flex justify-between items-center">
