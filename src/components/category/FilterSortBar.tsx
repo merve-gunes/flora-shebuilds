@@ -22,9 +22,10 @@ import { Separator } from "@/components/ui/separator";
 interface FilterSortBarProps {
   filtersOpen: boolean;
   setFiltersOpen: (open: boolean) => void;
+  itemCount: number;
 }
 
-const FilterSortBar = ({ filtersOpen, setFiltersOpen }: FilterSortBarProps) => {
+const FilterSortBar = ({ filtersOpen, setFiltersOpen, itemCount }: FilterSortBarProps) => {
   const [sortBy, setSortBy] = useState("featured");
 
   const categories = ["Earrings", "Bracelets", "Rings", "Necklaces"];
@@ -34,7 +35,11 @@ const FilterSortBar = ({ filtersOpen, setFiltersOpen }: FilterSortBarProps) => {
   return (
     <>
       <section className="w-full px-6 mb-8 border-b border-border pb-4">
-        <div className="max-w-7xl mx-auto flex justify-end items-center">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <p className="text-sm font-light text-muted-foreground">
+            {itemCount} items
+          </p>
+          
           <div className="flex items-center gap-4">
             <Sheet open={filtersOpen} onOpenChange={setFiltersOpen}>
               <SheetTrigger asChild>

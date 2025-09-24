@@ -10,10 +10,9 @@ import {
 
 interface CategoryHeaderProps {
   category: string;
-  itemCount: number;
 }
 
-const CategoryHeader = ({ category, itemCount }: CategoryHeaderProps) => {
+const CategoryHeader = ({ category }: CategoryHeaderProps) => {
   return (
     <section className="w-full px-6 mb-8">
       <div className="max-w-7xl mx-auto">
@@ -36,12 +35,9 @@ const CategoryHeader = ({ category, itemCount }: CategoryHeaderProps) => {
         </Breadcrumb>
         
         <div>
-          <h1 className="text-3xl md:text-4xl font-light text-foreground mb-2">
+          <h1 className="text-3xl md:text-4xl font-light text-foreground">
             {category}
           </h1>
-          <p className="text-sm font-light text-muted-foreground">
-            {itemCount} items
-          </p>
         </div>
       </div>
     </section>

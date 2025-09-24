@@ -18,12 +18,12 @@ const Category = () => {
       <main className="pt-6">
         <CategoryHeader 
           category={category || 'All Products'} 
-          itemCount={24}
         />
         
         <FilterSortBar 
           filtersOpen={filtersOpen}
           setFiltersOpen={setFiltersOpen}
+          itemCount={24}
         />
         
         <ProductGrid />
