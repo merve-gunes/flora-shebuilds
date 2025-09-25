@@ -15,6 +15,17 @@ const ProductDetail = () => {
       
       <main className="pt-6">
         <section className="w-full px-6">
+          {/* Breadcrumb - Show above image on smaller screens */}
+          <div className="lg:hidden mb-6">
+            <div className="text-sm font-light text-muted-foreground">
+              <span>Home</span>
+              <span className="mx-2">/</span>
+              <span>Earrings</span>
+              <span className="mx-2">/</span>
+              <span className="text-foreground font-normal">Pantheon</span>
+            </div>
+          </div>
+          
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
             <ProductImageGallery />
             

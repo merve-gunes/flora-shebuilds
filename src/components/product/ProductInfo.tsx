@@ -10,8 +10,8 @@ const ProductInfo = () => {
 
   return (
     <div className="space-y-6">
-      {/* Breadcrumb */}
-      <div className="text-sm font-light text-muted-foreground">
+      {/* Breadcrumb - Show only on desktop */}
+      <div className="hidden lg:block text-sm font-light text-muted-foreground">
         <span>Home</span>
         <span className="mx-2">/</span>
         <span>Earrings</span>
