@@ -35,7 +35,7 @@ const Sustainability = () => {
           </div>
 
           <div className="bg-muted/10 rounded-lg p-8">
-            <h3 className="text-2xl font-light text-foreground mb-6 text-center">Our Impact Goals</h3>
+            <h3 className="text-2xl font-light text-foreground mb-6">Our Impact Goals</h3>
             <div className="grid md:grid-cols-3 gap-8">
               <div>
                 <div className="text-3xl font-light text-primary mb-2">100%</div>
