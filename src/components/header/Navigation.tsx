@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import pantheonImage from "@/assets/pantheon.jpg";
+import eclipseImage from "@/assets/eclipse.jpg";
+import haloImage from "@/assets/halo.jpg";
 
 interface CartItem {
   id: number;
@@ -25,7 +28,7 @@ const Navigation = () => {
       id: 1,
       name: "Pantheon",
       price: "€2,850",
-      image: "/pantheon.jpg",
+      image: pantheonImage,
       quantity: 1,
       category: "Earrings"
     },
@@ -33,7 +36,7 @@ const Navigation = () => {
       id: 2,
       name: "Eclipse",
       price: "€3,200", 
-      image: "/eclipse.jpg",
+      image: eclipseImage,
       quantity: 1,
       category: "Bracelets"
     },
@@ -41,8 +44,8 @@ const Navigation = () => {
       id: 3,
       name: "Halo",
       price: "€1,950",
-      image: "/halo.jpg", 
-      quantity: 2,
+      image: haloImage, 
+      quantity: 1,
       category: "Earrings"
     }
   ]);
@@ -421,21 +424,21 @@ const Navigation = () => {
                                 </div>
                                 <p className="text-sm font-light text-foreground">{item.price}</p>
                               </div>
-                              <div className="flex items-center gap-3 mt-3">
-                                <div className="flex items-center border border-border rounded-lg">
+                              <div className="flex items-center gap-2 mt-3">
+                                <div className="flex items-center border border-border">
                                   <button 
                                     onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                                    className="p-2 hover:bg-muted/50 transition-colors"
+                                    className="p-1.5 hover:bg-muted/50 transition-colors"
                                     aria-label="Decrease quantity"
                                   >
                                     <Minus size={14} />
                                   </button>
-                                  <span className="px-3 py-2 text-sm font-medium min-w-[3rem] text-center">
+                                  <span className="px-2 py-1.5 text-sm font-medium min-w-[2.5rem] text-center">
                                     {item.quantity}
                                   </span>
                                   <button 
                                     onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                                    className="p-2 hover:bg-muted/50 transition-colors"
+                                    className="p-1.5 hover:bg-muted/50 transition-colors"
                                     aria-label="Increase quantity"
                                   >
                                     <Plus size={14} />
@@ -458,7 +461,7 @@ const Navigation = () => {
                             }, 0).toLocaleString()}
                           </span>
                         </div>
-                        <Button className="w-full">
+                        <Button className="w-full rounded-none">
                           Proceed to Checkout
                         </Button>
                       </div>
