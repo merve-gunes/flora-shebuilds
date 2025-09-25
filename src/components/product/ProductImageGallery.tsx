@@ -64,8 +64,8 @@ const ProductImageGallery = () => {
 
   return (
     <div className="w-full">
-      {/* Desktop/Tablet: Vertical scrolling gallery */}
-      <div className="hidden md:block">
+      {/* Desktop: Vertical scrolling gallery (1024px and above) */}
+      <div className="hidden lg:block">
         <div className="space-y-4">
           {productImages.map((image, index) => (
             <div 
@@ -83,8 +83,8 @@ const ProductImageGallery = () => {
         </div>
       </div>
 
-      {/* Mobile: Image slider */}
-      <div className="md:hidden">
+      {/* Tablet/Mobile: Image slider (below 1024px) */}
+      <div className="lg:hidden">
         <div className="relative">
           <div 
             className="w-full aspect-square overflow-hidden cursor-pointer group touch-pan-y"
