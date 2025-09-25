@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ReviewProduct from "./ReviewProduct";
 
 const CustomStar = ({ filled, className }: { filled: boolean; className?: string }) => (
   <svg 
@@ -148,12 +149,7 @@ const ProductDescription = () => {
         {isReviewsOpen && (
           <div className="pb-6 space-y-6">
             {/* Review Product Button */}
-            <Button 
-              variant="outline" 
-              className="w-full h-12 font-light rounded-none border-foreground text-foreground hover:bg-foreground hover:text-background"
-            >
-              Review Product
-            </Button>
+            <ReviewProduct />
 
             {/* Reviews List */}
             <div className="space-y-6">
