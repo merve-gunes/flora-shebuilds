@@ -461,8 +461,8 @@ const Navigation = () => {
                             }, 0).toLocaleString()}
                           </span>
                         </div>
-                        <Button className="w-full rounded-none">
-                          Proceed to Checkout
+                        <Button asChild className="w-full rounded-none">
+                          <Link to="/checkout">Proceed to Checkout</Link>
                         </Button>
                       </div>
                     </>
