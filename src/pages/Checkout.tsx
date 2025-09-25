@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Minus, Plus } from "lucide-react";
+import { Minus, Plus, CreditCard, Check } from "lucide-react";
 import CheckoutHeader from "../components/header/CheckoutHeader";
 import Footer from "../components/footer/Footer";
 import { Button } from "@/components/ui/button";
@@ -19,6 +19,14 @@ const Checkout = () => {
     phone: ""
   });
   const [shippingOption, setShippingOption] = useState("standard");
+  const [paymentDetails, setPaymentDetails] = useState({
+    cardNumber: "",
+    expiryDate: "",
+    cvv: "",
+    cardholderName: ""
+  });
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [paymentComplete, setPaymentComplete] = useState(false);
   
   // Mock cart data - in a real app this would come from state management
   const [cartItems, setCartItems] = useState([
@@ -67,6 +75,20 @@ const Checkout = () => {
 
   const handleCustomerDetailsChange = (field: string, value: string) => {
     setCustomerDetails(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handlePaymentDetailsChange = (field: string, value: string) => {
+    setPaymentDetails(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleCompleteOrder = async () => {
+    setIsProcessing(true);
+    
+    // Simulate payment processing
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    setIsProcessing(false);
+    setPaymentComplete(true);
   };
 
   return (
@@ -281,6 +303,116 @@ const Checkout = () => {
                   </div>
                 </div>
               </RadioGroup>
+            </div>
+
+            {/* Payment Section */}
+            <div className="bg-muted/20 p-8 rounded-none">
+              <h2 className="text-lg font-light text-foreground mb-6">Payment Details</h2>
+              
+              {!paymentComplete ? (
+                <div className="space-y-6">
+                  {/* Demo Notice */}
+                  <div className="bg-primary/10 p-4 rounded-none border-l-2 border-primary">
+                    <p className="text-sm text-foreground/80">
+                      Demo Mode: Use test card <code className="bg-muted px-1 py-0.5 rounded text-xs">4242 4242 4242 4242</code> or any future date and 3-digit CVV
+                    </p>
+                  </div>
+
+                  <div>
+                    <Label htmlFor="cardholderName" className="text-sm font-light text-foreground">
+                      Cardholder Name *
+                    </Label>
+                    <Input
+                      id="cardholderName"
+                      type="text"
+                      value={paymentDetails.cardholderName}
+                      onChange={(e) => handlePaymentDetailsChange("cardholderName", e.target.value)}
+                      className="mt-2 rounded-none"
+                      placeholder="Name on card"
+                    />
+                  </div>
+
+                  <div>
+                    <Label htmlFor="cardNumber" className="text-sm font-light text-foreground">
+                      Card Number *
+                    </Label>
+                    <div className="relative mt-2">
+                      <Input
+                        id="cardNumber"
+                        type="text"
+                        value={paymentDetails.cardNumber}
+                        onChange={(e) => {
+                          const value = e.target.value.replace(/\s/g, '').replace(/(.{4})/g, '$1 ').trim();
+                          if (value.length <= 19) {
+                            handlePaymentDetailsChange("cardNumber", value);
+                          }
+                        }}
+                        className="rounded-none pl-10"
+                        placeholder="4242 4242 4242 4242"
+                        maxLength={19}
+                      />
+                      <CreditCard className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="expiryDate" className="text-sm font-light text-foreground">
+                        Expiry Date *
+                      </Label>
+                      <Input
+                        id="expiryDate"
+                        type="text"
+                        value={paymentDetails.expiryDate}
+                        onChange={(e) => {
+                          const value = e.target.value.replace(/\D/g, '').replace(/(\d{2})(\d{2})/, '$1/$2');
+                          if (value.length <= 5) {
+                            handlePaymentDetailsChange("expiryDate", value);
+                          }
+                        }}
+                        className="mt-2 rounded-none"
+                        placeholder="MM/YY"
+                        maxLength={5}
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="cvv" className="text-sm font-light text-foreground">
+                        CVV *
+                      </Label>
+                      <Input
+                        id="cvv"
+                        type="text"
+                        value={paymentDetails.cvv}
+                        onChange={(e) => {
+                          const value = e.target.value.replace(/\D/g, '');
+                          if (value.length <= 3) {
+                            handlePaymentDetailsChange("cvv", value);
+                          }
+                        }}
+                        className="mt-2 rounded-none"
+                        placeholder="123"
+                        maxLength={3}
+                      />
+                    </div>
+                  </div>
+
+                  <Button
+                    onClick={handleCompleteOrder}
+                    disabled={isProcessing || !paymentDetails.cardNumber || !paymentDetails.expiryDate || !paymentDetails.cvv || !paymentDetails.cardholderName}
+                    className="w-full mt-8 rounded-none h-12 text-base"
+                  >
+                    {isProcessing ? "Processing..." : `Complete Order • €${total.toLocaleString()}`}
+                  </Button>
+                </div>
+              ) : (
+                <div className="text-center py-12">
+                  <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                    <Check className="h-8 w-8 text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-light text-foreground mb-2">Order Complete!</h3>
+                  <p className="text-muted-foreground">Thank you for your purchase. Your order confirmation has been sent to your email.</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
