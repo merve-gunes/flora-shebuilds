@@ -4,23 +4,10 @@ import Footer from "../components/footer/Footer";
 import ProductImageGallery from "../components/product/ProductImageGallery";
 import ProductInfo from "../components/product/ProductInfo";
 import ProductDescription from "../components/product/ProductDescription";
-import SimilarProducts from "../components/product/SimilarProducts";
+import ProductCarousel from "../components/content/ProductCarousel";
 
 const ProductDetail = () => {
   const { productId } = useParams();
-  
-  // Get current product category based on productId (simplified logic)
-  const getCurrentCategory = () => {
-    const productCategories: { [key: string]: string } = {
-      "1": "Earrings",
-      "2": "Bracelets", 
-      "3": "Rings",
-      "4": "Necklaces",
-      "5": "Earrings",
-      "6": "Bracelets",
-    };
-    return productCategories[productId || "1"] || "Earrings";
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -38,7 +25,19 @@ const ProductDetail = () => {
           </div>
         </section>
         
-        <SimilarProducts currentCategory={getCurrentCategory()} />
+        <section className="w-full px-6">
+          <div className="mb-4">
+            <h2 className="text-sm font-light text-foreground">You might also like</h2>
+          </div>
+          <ProductCarousel />
+        </section>
+        
+        <section className="w-full px-6">
+          <div className="mb-4">
+            <h2 className="text-sm font-light text-foreground">Our other Earrings</h2>
+          </div>
+          <ProductCarousel />
+        </section>
       </main>
       
       <Footer />
