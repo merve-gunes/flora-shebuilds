@@ -42,7 +42,7 @@ const ReviewProduct = () => {
           Review product
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md rounded-none">
         <DialogHeader>
           <DialogTitle className="font-light text-xl">Review product</DialogTitle>
         </DialogHeader>
