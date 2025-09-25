@@ -14,12 +14,12 @@ const ImageTextBlock = ({
   imagePosition = 'left' 
 }: ImageTextBlockProps) => {
   return (
-    <div className={`flex flex-col ${imagePosition === 'right' ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center`}>
+    <div className={`flex flex-col ${imagePosition === 'right' ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 items-center`}>
       <div className="flex-1">
         <img 
           src={image} 
           alt={imageAlt}
-          className="w-full aspect-square md:aspect-auto md:h-[800px] object-cover"
+          className="w-full aspect-square lg:aspect-auto lg:h-[800px] object-cover"
         />
       </div>
       <div className="flex-1 space-y-6">
