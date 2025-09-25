@@ -1,6 +1,4 @@
-import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useState, useRef } from "react";
 import ImageZoom from "./ImageZoom";
 import pantheonImage from "@/assets/pantheon.jpg";
 import eclipseImage from "@/assets/eclipse.jpg";
@@ -20,6 +18,8 @@ const ProductImageGallery = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isZoomOpen, setIsZoomOpen] = useState(false);
   const [zoomInitialIndex, setZoomInitialIndex] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % productImages.length);
@@ -32,6 +32,34 @@ const ProductImageGallery = () => {
   const handleImageClick = (index: number) => {
     setZoomInitialIndex(index);
     setIsZoomOpen(true);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    
+    const difference = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50;
+
+    if (Math.abs(difference) > minSwipeDistance) {
+      if (difference > 0) {
+        // Swipe left - next image
+        nextImage();
+      } else {
+        // Swipe right - previous image
+        prevImage();
+      }
+    }
+
+    touchStartX.current = null;
+    touchEndX.current = null;
   };
 
   return (
@@ -59,33 +87,18 @@ const ProductImageGallery = () => {
       <div className="md:hidden">
         <div className="relative">
           <div 
-            className="w-full aspect-square overflow-hidden cursor-pointer group"
+            className="w-full aspect-square overflow-hidden cursor-pointer group touch-pan-y"
             onClick={() => handleImageClick(currentImageIndex)}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
             <img
               src={productImages[currentImageIndex]}
               alt={`Product view ${currentImageIndex + 1}`}
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 select-none"
             />
           </div>
-          
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={prevImage}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white/90 text-black p-2 rounded-full"
-          >
-            <ChevronLeft className="h-4 w-4" />
-          </Button>
-          
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={nextImage}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white/90 text-black p-2 rounded-full"
-          >
-            <ChevronRight className="h-4 w-4" />
-          </Button>
           
           {/* Dots indicator */}
           <div className="flex justify-center mt-4 gap-2">
