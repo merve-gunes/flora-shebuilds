@@ -74,7 +74,7 @@ const Index = () => {
             <a href="#kategoriler" className="text-sm text-foreground/70 hover:text-foreground transition-colors">
               Kategoriler
             </a>
-            <a href="#ozel-gunler" className="text-sm text-foreground/70 hover:text-foreground transition-colors">
+            <a href="#kategoriler" className="text-sm text-foreground/70 hover:text-foreground transition-colors">
               Özel Günler
             </a>
             <a href="#hakkimizda" className="text-sm text-foreground/70 hover:text-foreground transition-colors">
@@ -126,7 +126,7 @@ const Index = () => {
                 Kategoriler
               </a>
               <a 
-                href="#ozel-gunler" 
+                href="#kategoriler" 
                 className="text-foreground/70 hover:text-foreground transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
