@@ -14,6 +14,12 @@ import gulBuketleri from "@/assets/gul-buketleri.jpg";
 import orkideImage from "@/assets/orkide.jpg";
 import dugunCicekleri from "@/assets/dugun-cicekleri.jpg";
 import hediyeKutusu from "@/assets/hediye-kutusu.jpg";
+import nergisImage from "@/assets/nergis.jpg";
+import laleImage from "@/assets/lale.jpg";
+import papatyaImage from "@/assets/papatya.jpg";
+import niluferImage from "@/assets/nilufer.jpg";
+import aycicegiImage from "@/assets/aycicegi.jpg";
+import lavantaImage from "@/assets/lavanta.jpg";
 
 export interface Product {
   id: string;
@@ -29,8 +35,8 @@ export interface Product {
 export const allProducts: Product[] = [
   // Gül Buketleri
   {
-    id: "gul-kirmizi-ask",
-    name: "Kırmızı Aşk Buketi",
+    id: "gul-kirmizi",
+    name: "Kırmızı Gül Buketi",
     price: "₺850",
     desc: "51 adet premium kırmızı gül, saten kurdele ve özel ambalajda",
     image: gulKirmiziAsk,
@@ -334,6 +340,157 @@ export const allProducts: Product[] = [
     categorySlug: "/hediye-kutulari",
     details: ["Pastel çiçekler", "Kişiye özel hediyeler", "Anneler günü kartı"],
   },
+  // Laleler
+  {
+    id: "lale-karışık",
+    name: "Karışık Lale Buketi",
+    price: "₺480",
+    desc: "Kırmızı, sarı ve pembe lalelerin neşeli uyumu",
+    image: laleImage,
+    category: "Laleler",
+    categorySlug: "/laleler",
+    details: ["25 adet karışık renk lale", "Mevsimsel buket", "Kraft ambalaj"],
+  },
+  {
+    id: "lale-pembe",
+    name: "Pembe Lale Aranjmanı",
+    price: "₺420",
+    desc: "Soft pembe lalelerin zarif aranjmanı, cam vazoda",
+    image: laleImage,
+    category: "Laleler",
+    categorySlug: "/laleler",
+    details: ["20 adet pembe lale", "Cam vazo dahil", "Dekoratif yeşillik"],
+  },
+  {
+    id: "lale-beyaz",
+    name: "Beyaz Lale Buketi",
+    price: "₺450",
+    desc: "Saf beyaz laleler, minimalist ambalajda",
+    image: laleImage,
+    category: "Laleler",
+    categorySlug: "/laleler",
+    details: ["15 adet beyaz lale", "Minimalist tasarım", "Taze çiçek garantisi"],
+  },
+
+  // Papatyalar
+  {
+    id: "papatya-kir",
+    name: "Kır Papatyası Buketi",
+    price: "₺320",
+    desc: "Doğal kır papatyaları, jüt kurdele ile bağlanmış",
+    image: papatyaImage,
+    category: "Papatyalar",
+    categorySlug: "/papatyalar",
+    details: ["Taze kır papatyaları", "Jüt kurdele", "Doğal görünüm"],
+  },
+  {
+    id: "papatya-sepet",
+    name: "Papatya Sepeti",
+    price: "₺450",
+    desc: "Hasır sepette bol papatya aranjmanı",
+    image: papatyaImage,
+    category: "Papatyalar",
+    categorySlug: "/papatyalar",
+    details: ["El örgüsü hasır sepet", "Bol papatya", "Yeşillik detayları"],
+  },
+  {
+    id: "papatya-karisik",
+    name: "Papatya & Yeşillik",
+    price: "₺380",
+    desc: "Papatyalar ve mevsim yeşillikleriyle doğal buket",
+    image: papatyaImage,
+    category: "Papatyalar",
+    categorySlug: "/papatyalar",
+    details: ["Taze papatyalar", "Mevsim yeşillikleri", "Doğal ambalaj"],
+  },
+
+  // Nergisler
+  {
+    id: "nergis-sari",
+    name: "Sarı Nergis Buketi",
+    price: "₺350",
+    desc: "Baharın müjdecisi sarı nergisler, neşeli bir buket",
+    image: nergisImage,
+    category: "Nergisler",
+    categorySlug: "/nergisler",
+    details: ["20 adet sarı nergis", "Bahar temalı ambalaj", "Taze çiçek garantisi"],
+  },
+  {
+    id: "nergis-beyaz",
+    name: "Beyaz Nergis Aranjmanı",
+    price: "₺400",
+    desc: "Zarif beyaz nergisler, seramik vazo içinde",
+    image: nergisImage,
+    category: "Nergisler",
+    categorySlug: "/nergisler",
+    details: ["Beyaz nergisler", "Seramik vazo dahil", "Uzun ömürlü"],
+  },
+
+  // Ayçiçeği
+  {
+    id: "aycicegi-buket",
+    name: "Ayçiçeği Buketi",
+    price: "₺420",
+    desc: "Güneşin enerjisini taşıyan canlı ayçiçeği buketi",
+    image: aycicegiImage,
+    category: "Ayçiçekleri",
+    categorySlug: "/aycicekleri",
+    details: ["7 adet büyük ayçiçeği", "Kraft ambalaj", "Mevsimsel yeşillik"],
+  },
+  {
+    id: "aycicegi-aranjman",
+    name: "Ayçiçeği Aranjmanı",
+    price: "₺520",
+    desc: "Ayçiçekleri ve mevsim çiçekleriyle zengin aranjman",
+    image: aycicegiImage,
+    category: "Ayçiçekleri",
+    categorySlug: "/aycicekleri",
+    details: ["Ayçiçekleri", "Mevsim çiçekleri", "Seramik vazo dahil"],
+  },
+
+  // Lavanta
+  {
+    id: "lavanta-buket",
+    name: "Lavanta Demeti",
+    price: "₺280",
+    desc: "Mis kokulu taze lavanta demeti, kurdele ile bağlanmış",
+    image: lavantaImage,
+    category: "Lavanta",
+    categorySlug: "/lavanta",
+    details: ["Taze lavanta dalları", "Doğal kurdele", "Aromatik"],
+  },
+  {
+    id: "lavanta-kuru",
+    name: "Kuru Lavanta Buketi",
+    price: "₺350",
+    desc: "Uzun ömürlü kurutulmuş lavanta buketi, dekoratif ambalajda",
+    image: lavantaImage,
+    category: "Lavanta",
+    categorySlug: "/lavanta",
+    details: ["Kurutulmuş lavanta", "Uzun ömürlü", "Dekoratif ambalaj"],
+  },
+
+  // Nilüfer
+  {
+    id: "nilufer-pembe",
+    name: "Pembe Nilüfer Aranjmanı",
+    price: "₺680",
+    desc: "Su kabında zarif pembe nilüfer çiçeği aranjmanı",
+    image: niluferImage,
+    category: "Nilüfer",
+    categorySlug: "/nilufer",
+    details: ["Pembe nilüfer", "Cam su kabı", "Yüzen mum dahil", "Zen estetiği"],
+  },
+  {
+    id: "nilufer-beyaz",
+    name: "Beyaz Nilüfer Seti",
+    price: "₺750",
+    desc: "Huzur veren beyaz nilüfer, dekoratif havuz tasarımı",
+    image: niluferImage,
+    category: "Nilüfer",
+    categorySlug: "/nilufer",
+    details: ["Beyaz nilüfer", "Mini dekoratif havuz", "Bambu detaylar"],
+  },
 ];
 
 // Helper functions
@@ -347,6 +504,12 @@ export const categoryHeroImages: Record<string, string> = {
   "/orkideler": orkideImage,
   "/dugun-cicekleri": dugunCicekleri,
   "/hediye-kutulari": hediyeKutusu,
+  "/laleler": laleImage,
+  "/papatyalar": papatyaImage,
+  "/nergisler": nergisImage,
+  "/aycicekleri": aycicegiImage,
+  "/lavanta": lavantaImage,
+  "/nilufer": niluferImage,
 };
 
 export const categoryNames: Record<string, string> = {
@@ -354,4 +517,10 @@ export const categoryNames: Record<string, string> = {
   "/orkideler": "Orkideler",
   "/dugun-cicekleri": "Düğün Çiçekleri",
   "/hediye-kutulari": "Hediye Kutuları",
+  "/laleler": "Laleler",
+  "/papatyalar": "Papatyalar",
+  "/nergisler": "Nergisler",
+  "/aycicekleri": "Ayçiçekleri",
+  "/lavanta": "Lavanta",
+  "/nilufer": "Nilüfer",
 };

@@ -20,19 +20,19 @@ import SearchModal from "@/components/search/SearchModal";
 const categories = [
   {
     image: gulBuketleri,
-    title: "Aşkın Dili Güller",
+    title: "Gül Buketleri",
     alt: "Gül Buketleri",
     link: "/gul-buketleri"
   },
   {
     image: orkideImage,
-    title: "Evinize Nefes Aldırın",
+    title: "Orkideler",
     alt: "Orkideler",
     link: "/orkideler"
   },
   {
     image: dugunCicekleri,
-    title: "En Mutlu Günlere",
+    title: "Düğün Çiçekleri",
     alt: "Düğün Çiçekleri",
     link: "/dugun-cicekleri"
   }
@@ -54,9 +54,9 @@ import hediyeMini from "@/assets/hediye-mini.jpg";
 // Category sections data
 const categoryProducts = {
   guller: [
-    { name: "Romantik Gül Buketi", price: "₺450", image: gulRomantik },
-    { name: "Kırmızı Aşk", price: "₺550", image: gulKirmiziAsk },
-    { name: "Pembe Rüya", price: "₺400", image: gulPembeRuya },
+    { name: "Kırmızı Gül Buketi", price: "₺450", image: gulRomantik },
+    { name: "Pembe Gül Aranjmanı", price: "₺550", image: gulKirmiziAsk },
+    { name: "Beyaz Gül Buketi", price: "₺400", image: gulPembeRuya },
   ],
   orkideler: [
     { name: "Mor Orkide", price: "₺650", image: orkideMor },
@@ -164,6 +164,24 @@ const Index = () => {
                   </Link>
                   <Link to="/orkideler" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
                     Orkideler
+                  </Link>
+                  <Link to="/laleler" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
+                    Laleler
+                  </Link>
+                  <Link to="/papatyalar" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
+                    Papatyalar
+                  </Link>
+                  <Link to="/nergisler" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
+                    Nergisler
+                  </Link>
+                  <Link to="/aycicekleri" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
+                    Ayçiçekleri
+                  </Link>
+                  <Link to="/lavanta" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
+                    Lavanta
+                  </Link>
+                  <Link to="/nilufer" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
+                    Nilüfer
                   </Link>
                   <Link to="/dugun-cicekleri" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
                     Düğün Çiçekleri
