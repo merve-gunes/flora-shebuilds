@@ -19,5 +19,3 @@ Flora, modern ve minimalist bir çiçekçi e-ticaret sitesidir. Bu çalışma, g
 - **Dinamik E-Ticaret Akışı:** Ürünlerin sepete eklenmesi, sepet panelinde listelenmesi ve toplam tutar hesaplaması aktif olarak çalışmaktadır.
 - **Checkout Simülasyonu:** Kullanıcı yolculuğunu tamamlamak adına veritabanı bağımsız, çalışan bir ödeme ve teslimat formu kurgulanmıştır.
 
----
-*Bu proje, OSTİM Teknik Üniversitesi Yazılım Mühendisliği öğrencisi olarak katıldığım SheBuilds etkinliği için bir teknoloji demosu olarak hazırlanmıştır.*
