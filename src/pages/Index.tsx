@@ -113,25 +113,25 @@ const Index = () => {
               <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <div className="bg-background/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-xl py-2 min-w-[180px]">
                   <a 
-                    href="#kategoriler" 
+                    href="#gul-buketleri" 
                     className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors"
                   >
                     Gül Buketleri
                   </a>
                   <a 
-                    href="#kategoriler" 
+                    href="#orkideler" 
                     className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors"
                   >
                     Orkideler
                   </a>
                   <a 
-                    href="#kategoriler" 
+                    href="#dugun-cicekleri" 
                     className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors"
                   >
                     Düğün Çiçekleri
                   </a>
                   <a 
-                    href="#kategoriler" 
+                    href="#hediye-kutulari" 
                     className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors"
                   >
                     Hediye Kutuları
