@@ -17,8 +17,36 @@ const SiteHeader = ({ onContactOpen }: SiteHeaderProps) => {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-xl border-b border-border/50 shadow-sm">
         <div className="container mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-          <Link to="/" className="font-display text-xl sm:text-2xl text-foreground hover:text-primary transition-colors">
-            Zarif Buket
+          <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="text-foreground flex-shrink-0"
+            >
+              {/* Main stem */}
+              <path d="M14 3 Q14.5 10 13 18 Q12.5 22 14 26" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+              
+              {/* Top petals */}
+              <path d="M14 5 Q16.5 3.5 17.5 6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M14 5 Q11.5 3.5 10.5 6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+              
+              {/* Middle petals */}
+              <path d="M15.5 9 Q18.5 8.5 20 10.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M12.5 9 Q9.5 8.5 8 10.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+              
+              {/* Lower petals */}
+              <path d="M15 14 Q18 15 19 17.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M13 14 Q10 15 9 17.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+              
+              {/* Center */}
+              <circle cx="14" cy="8" r="1.5" fill="currentColor"/>
+            </svg>
+            <span className="font-display text-xl sm:text-2xl text-foreground">
+              Zarif Buket
+            </span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-6 lg:gap-8">
