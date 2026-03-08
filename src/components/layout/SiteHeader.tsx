@@ -50,13 +50,20 @@ const SiteHeader = ({ onContactOpen }: SiteHeaderProps) => {
           </Link>
 
           <nav className="hidden md:flex items-center gap-6 lg:gap-8">
-            <div className="relative group">
-              <button className="flex items-center gap-1 text-sm text-foreground/70 hover:text-foreground transition-colors py-2">
+            <div
+              className="relative"
+              onMouseEnter={() => setIsCatOpen(true)}
+              onMouseLeave={() => setIsCatOpen(false)}
+            >
+              <button
+                className="flex items-center gap-1 text-sm text-foreground/70 hover:text-foreground transition-colors py-2"
+                onClick={() => setIsCatOpen(!isCatOpen)}
+              >
                 Kategoriler
-                <ChevronDown size={14} className="transition-transform duration-200 group-hover:rotate-180" />
+                <ChevronDown size={14} className={`transition-transform duration-200 ${isCatOpen ? 'rotate-180' : ''}`} />
               </button>
-              <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="bg-background/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-xl py-2 min-w-[180px]">
+              {isCatOpen && (
+              <div className="absolute top-full left-0 pt-1 z-50">
                   {[
                     { to: "/gul-buketleri", label: "Gül Buketleri" },
                     { to: "/orkideler", label: "Orkideler" },
