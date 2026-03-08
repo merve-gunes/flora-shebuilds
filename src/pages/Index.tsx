@@ -1,7 +1,28 @@
 import heroFlowers from "@/assets/hero-flowers.jpg";
+import gulBuketleri from "@/assets/gul-buketleri.jpg";
+import salonBitkileri from "@/assets/salon-bitkileri.jpg";
+import dogumGunu from "@/assets/dogum-gunu.jpg";
 import { Button } from "@/components/ui/button";
 import { Search, ShoppingBag, Menu, X } from "lucide-react";
 import { useState } from "react";
+
+const categories = [
+  {
+    image: gulBuketleri,
+    title: "Aşkın Dili Güller",
+    alt: "Gül Buketleri"
+  },
+  {
+    image: salonBitkileri,
+    title: "Evinize Nefes Aldırın",
+    alt: "Salon Bitkileri"
+  },
+  {
+    image: dogumGunu,
+    title: "En Mutlu Günlere",
+    alt: "Doğum Günü Aranjmanları"
+  }
+];
 
 const Index = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -152,6 +173,53 @@ const Index = () => {
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
+          </div>
+        </div>
+      </section>
+
+      {/* Popular Categories Section */}
+      <section id="kategoriler" className="py-24 bg-muted/30">
+        <div className="container mx-auto px-6">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4">
+              Popüler Kategoriler
+            </h2>
+            <p className="text-foreground/60 max-w-md mx-auto">
+              En sevilen çiçek ve bitki kategorilerimizi keşfedin
+            </p>
+          </div>
+
+          {/* Category Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {categories.map((category, index) => (
+              <div 
+                key={index}
+                className="group bg-card rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+              >
+                {/* Image */}
+                <div className="aspect-[4/5] overflow-hidden">
+                  <img 
+                    src={category.image} 
+                    alt={category.alt}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                
+                {/* Content */}
+                <div className="p-6 text-center">
+                  <h3 className="font-display text-xl text-foreground mb-4">
+                    {category.title}
+                  </h3>
+                  <Button 
+                    variant="outline" 
+                    className="rounded-full border-primary text-primary-foreground bg-primary/10 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                  >
+                    İncele
+                  </Button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
