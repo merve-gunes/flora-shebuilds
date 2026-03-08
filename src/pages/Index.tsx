@@ -368,12 +368,14 @@ const Index = () => {
                   <h3 className="font-display text-lg sm:text-xl text-foreground mb-4">
                     {category.title}
                   </h3>
-                  <Button 
-                    variant="outline" 
-                    className="btn-glow rounded-full border-primary text-primary-foreground bg-primary/10 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-[0_5px_20px_-5px_hsl(350_50%_70%)]"
-                  >
-                    İncele
-                  </Button>
+                  <Link to={category.link}>
+                    <Button 
+                      variant="outline" 
+                      className="btn-glow rounded-full border-primary text-primary-foreground bg-primary/10 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-[0_5px_20px_-5px_hsl(350_50%_70%)]"
+                    >
+                      İncele
+                    </Button>
+                  </Link>
                 </div>
               </div>
             ))}
