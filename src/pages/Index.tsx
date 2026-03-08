@@ -3,7 +3,8 @@ import gulBuketleri from "@/assets/gul-buketleri.jpg";
 import salonBitkileri from "@/assets/salon-bitkileri.jpg";
 import dogumGunu from "@/assets/dogum-gunu.jpg";
 import { Button } from "@/components/ui/button";
-import { Search, ShoppingBag, Menu, X, Flower2, PenLine, Truck, Quote, BadgeCheck } from "lucide-react";
+import { Search, ShoppingBag, Menu, X, Flower2, PenLine, Truck, Quote, BadgeCheck, Instagram, Mail, Clock } from "lucide-react";
+import { Input } from "@/components/ui/input";
 import { useState } from "react";
 
 const categories = [
@@ -318,6 +319,103 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Newsletter Section */}
+      <section className="py-20 bg-primary/10">
+        <div className="container mx-auto px-6">
+          <div className="max-w-xl mx-auto text-center">
+            <Mail size={32} className="text-primary mx-auto mb-4" strokeWidth={1.5} />
+            <h2 className="font-display text-2xl md:text-3xl text-foreground mb-3">
+              Bültenimize Katılın
+            </h2>
+            <p className="text-foreground/60 mb-8">
+              İndirimlerden ve yeni tasarımlardan haberdar olun
+            </p>
+            
+            <form 
+              className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+              onSubmit={(e) => {
+                e.preventDefault();
+                // Handle newsletter subscription
+              }}
+            >
+              <Input 
+                type="email"
+                placeholder="E-posta adresiniz"
+                className="flex-1 rounded-full px-6 py-3 h-12 bg-background border-border focus:border-primary"
+                required
+                maxLength={255}
+              />
+              <Button 
+                type="submit"
+                className="bg-primary hover:bg-primary-hover text-primary-foreground px-8 h-12 rounded-full transition-all duration-300"
+              >
+                Abone Ol
+              </Button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 bg-foreground text-background">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            {/* Logo & Social */}
+            <div className="flex flex-col items-center md:items-start gap-4">
+              <span className="font-display text-2xl">Zarif Buket</span>
+              <div className="flex items-center gap-4">
+                <a 
+                  href="https://instagram.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full bg-background/10 hover:bg-background/20 transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram size={20} />
+                </a>
+                <a 
+                  href="https://pinterest.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full bg-background/10 hover:bg-background/20 transition-colors"
+                  aria-label="Pinterest"
+                >
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="20" 
+                    height="20" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  >
+                    <line x1="12" y1="17" x2="12" y2="22"/>
+                    <path d="M8 21.5L11.5 13"/>
+                    <circle cx="12" cy="9" r="7"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            {/* Working Hours */}
+            <div className="flex items-center gap-3 text-background/80">
+              <Clock size={18} />
+              <div className="text-sm">
+                <p>Pazartesi - Cumartesi: 09:00 - 20:00</p>
+                <p>Pazar: 10:00 - 18:00</p>
+              </div>
+            </div>
+
+            {/* Copyright */}
+            <div className="text-sm text-background/60">
+              © 2026 Zarif Buket. Tüm hakları saklıdır.
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
