@@ -456,7 +456,8 @@ const Index = () => {
                   <p className="text-primary font-medium mb-3">{product.price}</p>
                   <Button 
                     size="sm"
-                    className="btn-glow bg-primary hover:bg-primary-hover text-primary-foreground rounded-full transition-all duration-300"
+                    onClick={() => handleAddToCart(product)}
+                    className="btn-glow bg-primary hover:bg-primary/90 text-primary-foreground rounded-full transition-all duration-300"
                   >
                     Sepete Ekle
                   </Button>
