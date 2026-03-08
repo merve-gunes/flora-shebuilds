@@ -74,7 +74,7 @@ const Index = () => {
             <a href="#kategoriler" className="text-sm text-foreground/70 hover:text-foreground transition-colors">
               Kategoriler
             </a>
-            <a href="#ozel-gunler" className="text-sm text-foreground/70 hover:text-foreground transition-colors">
+            <a href="#kategoriler" className="text-sm text-foreground/70 hover:text-foreground transition-colors">
               Özel Günler
             </a>
             <a href="#hakkimizda" className="text-sm text-foreground/70 hover:text-foreground transition-colors">
