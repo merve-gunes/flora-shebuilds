@@ -8,6 +8,7 @@ import dugunCicekleri from "@/assets/dugun-cicekleri.jpg";
 import hediyeKutusu from "@/assets/hediye-kutusu.jpg";
 import { Button } from "@/components/ui/button";
 import { Search, ShoppingBag, Menu, X, Flower2, PenLine, Truck, Quote, BadgeCheck, Instagram, Mail, Clock, ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState, useEffect, useRef } from "react";
@@ -112,30 +113,18 @@ const Index = () => {
               {/* Dropdown Menu */}
               <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <div className="bg-background/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-xl py-2 min-w-[180px]">
-                  <a 
-                    href="#gul-buketleri" 
-                    className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors"
-                  >
+                  <Link to="/gul-buketleri" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
                     Gül Buketleri
-                  </a>
-                  <a 
-                    href="#orkideler" 
-                    className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors"
-                  >
+                  </Link>
+                  <Link to="/orkideler" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
                     Orkideler
-                  </a>
-                  <a 
-                    href="#dugun-cicekleri" 
-                    className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors"
-                  >
+                  </Link>
+                  <Link to="/dugun-cicekleri" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
                     Düğün Çiçekleri
-                  </a>
-                  <a 
-                    href="#hediye-kutulari" 
-                    className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors"
-                  >
+                  </Link>
+                  <Link to="/hediye-kutulari" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
                     Hediye Kutuları
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
