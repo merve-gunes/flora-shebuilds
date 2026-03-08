@@ -11,6 +11,7 @@ interface SiteHeaderProps {
 const SiteHeader = ({ onContactOpen }: SiteHeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isCatOpen, setIsCatOpen] = useState(false);
   const { totalItems, setIsOpen: setCartOpen } = useCart();
 
   return (
