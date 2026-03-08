@@ -2,6 +2,7 @@ import heroFlowers from "@/assets/hero-flowers.jpg";
 import gulBuketleri from "@/assets/gul-buketleri.jpg";
 import salonBitkileri from "@/assets/salon-bitkileri.jpg";
 import dogumGunu from "@/assets/dogum-gunu.jpg";
+import atolyeImage from "@/assets/atolye.jpg";
 import { Button } from "@/components/ui/button";
 import { Search, ShoppingBag, Menu, X, Flower2, PenLine, Truck, Quote, BadgeCheck, Instagram, Mail, Clock } from "lucide-react";
 import { Input } from "@/components/ui/input";
