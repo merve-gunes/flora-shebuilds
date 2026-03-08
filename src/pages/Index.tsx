@@ -38,27 +38,40 @@ const categories = [
   }
 ];
 
+import gulRomantik from "@/assets/gul-romantik.jpg";
+import gulKirmiziAsk from "@/assets/gul-kirmizi-ask.jpg";
+import gulPembeRuya from "@/assets/gul-pembe-ruya.jpg";
+import orkideMor from "@/assets/orkide-mor.jpg";
+import orkideBeyaz from "@/assets/orkide-beyaz.jpg";
+import orkidePembe from "@/assets/orkide-pembe.jpg";
+import dugunGelinBuketi from "@/assets/dugun-gelin-buketi.jpg";
+import dugunMasa from "@/assets/dugun-masa.jpg";
+import dugunKapiSusu from "@/assets/dugun-kapi-susu.jpg";
+import hediyeLuks from "@/assets/hediye-luks.jpg";
+import hediyeCikolata from "@/assets/hediye-cikolata.jpg";
+import hediyeMini from "@/assets/hediye-mini.jpg";
+
 // Category sections data
 const categoryProducts = {
   guller: [
-    { name: "Romantik Gül Buketi", price: "₺450", image: gulBuketleri },
-    { name: "Kırmızı Aşk", price: "₺550", image: gulBuketleri },
-    { name: "Pembe Rüya", price: "₺400", image: gulBuketleri },
+    { name: "Romantik Gül Buketi", price: "₺450", image: gulRomantik },
+    { name: "Kırmızı Aşk", price: "₺550", image: gulKirmiziAsk },
+    { name: "Pembe Rüya", price: "₺400", image: gulPembeRuya },
   ],
   orkideler: [
-    { name: "Mor Orkide", price: "₺650", image: orkideImage },
-    { name: "Beyaz Elegance", price: "₺750", image: orkideImage },
-    { name: "Phalaenopsis", price: "₺580", image: orkideImage },
+    { name: "Mor Orkide", price: "₺650", image: orkideMor },
+    { name: "Beyaz Elegance", price: "₺750", image: orkideBeyaz },
+    { name: "Phalaenopsis", price: "₺580", image: orkidePembe },
   ],
   dugun: [
-    { name: "Gelin Buketi", price: "₺850", image: dugunCicekleri },
-    { name: "Masa Aranjmanı", price: "₺450", image: dugunCicekleri },
-    { name: "Kapı Süsü", price: "₺350", image: dugunCicekleri },
+    { name: "Gelin Buketi", price: "₺850", image: dugunGelinBuketi },
+    { name: "Masa Aranjmanı", price: "₺450", image: dugunMasa },
+    { name: "Kapı Süsü", price: "₺350", image: dugunKapiSusu },
   ],
   hediye: [
-    { name: "Lüks Hediye Kutusu", price: "₺750", image: hediyeKutusu },
-    { name: "Çikolatalı Set", price: "₺650", image: hediyeKutusu },
-    { name: "Mini Sürpriz", price: "₺400", image: hediyeKutusu },
+    { name: "Lüks Hediye Kutusu", price: "₺750", image: hediyeLuks },
+    { name: "Çikolatalı Set", price: "₺650", image: hediyeCikolata },
+    { name: "Mini Sürpriz", price: "₺400", image: hediyeMini },
   ],
 };
 
