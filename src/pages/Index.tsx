@@ -3,7 +3,7 @@ import gulBuketleri from "@/assets/gul-buketleri.jpg";
 import salonBitkileri from "@/assets/salon-bitkileri.jpg";
 import dogumGunu from "@/assets/dogum-gunu.jpg";
 import { Button } from "@/components/ui/button";
-import { Search, ShoppingBag, Menu, X, Flower2, PenLine, Truck } from "lucide-react";
+import { Search, ShoppingBag, Menu, X, Flower2, PenLine, Truck, Quote, BadgeCheck } from "lucide-react";
 import { useState } from "react";
 
 const categories = [
@@ -283,6 +283,36 @@ const Index = () => {
                 <p className="text-foreground/60 text-sm leading-relaxed">
                   Seçtiğiniz saat diliminde kapınıza getirelim.
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Customer Testimonial Section */}
+      <section className="py-24 bg-muted/30">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            {/* Quote Icon */}
+            <div className="mb-8">
+              <Quote size={48} className="text-primary/40 mx-auto" strokeWidth={1} />
+            </div>
+            
+            {/* Testimonial Text */}
+            <blockquote className="font-display text-2xl md:text-3xl lg:text-4xl text-foreground leading-relaxed mb-8">
+              "Eşimin doğum günü için verdiğim sipariş tam zamanında ve görseldekinden bile daha güzel geldi. Teşekkürler Zarif Buket!"
+            </blockquote>
+            
+            {/* Customer Info */}
+            <div className="flex flex-col items-center gap-3">
+              <p className="text-lg font-medium text-foreground">
+                Ayşe Y.
+              </p>
+              
+              {/* Verification Badge */}
+              <div className="flex items-center gap-2 text-secondary-foreground bg-secondary/80 px-4 py-2 rounded-full">
+                <BadgeCheck size={18} className="text-primary" />
+                <span className="text-sm font-medium">Doğrulanmış Müşteri</span>
               </div>
             </div>
           </div>
