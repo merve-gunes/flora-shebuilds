@@ -35,8 +35,8 @@ export interface Product {
 export const allProducts: Product[] = [
   // Gül Buketleri
   {
-    id: "gul-kirmizi-ask",
-    name: "Kırmızı Aşk Buketi",
+    id: "gul-kirmizi",
+    name: "Kırmızı Gül Buketi",
     price: "₺850",
     desc: "51 adet premium kırmızı gül, saten kurdele ve özel ambalajda",
     image: gulKirmiziAsk,
