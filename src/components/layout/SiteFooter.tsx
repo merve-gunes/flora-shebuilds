@@ -30,7 +30,7 @@ const SiteFooter = () => {
           </div>
 
           <div className="text-sm text-background/60 text-center">
-            © 2026 Zarif Buket. Tüm hakları saklıdır.
+            © 2026 Flora. Tüm hakları saklıdır.
           </div>
         </div>
       </div>
