@@ -11,6 +11,7 @@ interface SiteHeaderProps {
 const SiteHeader = ({ onContactOpen }: SiteHeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isCatOpen, setIsCatOpen] = useState(false);
   const { totalItems, setIsOpen: setCartOpen } = useCart();
 
   return (
@@ -49,27 +50,40 @@ const SiteHeader = ({ onContactOpen }: SiteHeaderProps) => {
           </Link>
 
           <nav className="hidden md:flex items-center gap-6 lg:gap-8">
-            <div className="relative group">
-              <button className="flex items-center gap-1 text-sm text-foreground/70 hover:text-foreground transition-colors py-2">
+            <div
+              className="relative"
+              onMouseEnter={() => setIsCatOpen(true)}
+              onMouseLeave={() => setIsCatOpen(false)}
+            >
+              <button
+                className="flex items-center gap-1 text-sm text-foreground/70 hover:text-foreground transition-colors py-2"
+                onClick={() => setIsCatOpen(!isCatOpen)}
+              >
                 Kategoriler
-                <ChevronDown size={14} className="transition-transform duration-200 group-hover:rotate-180" />
+                <ChevronDown size={14} className={`transition-transform duration-200 ${isCatOpen ? 'rotate-180' : ''}`} />
               </button>
-              <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="bg-background/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-xl py-2 min-w-[180px]">
-                  <Link to="/gul-buketleri" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
-                    Gül Buketleri
-                  </Link>
-                  <Link to="/orkideler" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
-                    Orkideler
-                  </Link>
-                  <Link to="/dugun-cicekleri" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
-                    Düğün Çiçekleri
-                  </Link>
-                  <Link to="/hediye-kutulari" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
-                    Hediye Kutuları
-                  </Link>
+              {isCatOpen && (
+                <div className="absolute top-full left-0 pt-1 z-50">
+                  <div className="bg-background/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-xl py-2 min-w-[180px]">
+                    {[
+                      { to: "/gul-buketleri", label: "Gül Buketleri" },
+                      { to: "/orkideler", label: "Orkideler" },
+                      { to: "/laleler", label: "Laleler" },
+                      { to: "/papatyalar", label: "Papatyalar" },
+                      { to: "/nergisler", label: "Nergisler" },
+                      { to: "/aycicekleri", label: "Ayçiçekleri" },
+                      { to: "/lavanta", label: "Lavanta" },
+                      { to: "/nilufer", label: "Nilüfer" },
+                      { to: "/dugun-cicekleri", label: "Düğün Çiçekleri" },
+                      { to: "/hediye-kutulari", label: "Hediye Kutuları" },
+                    ].map((item) => (
+                      <Link key={item.to} to={item.to} onClick={() => setIsCatOpen(false)} className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
             <Link to="/#kategoriler" className="text-sm text-foreground/70 hover:text-foreground transition-colors">
               Özel Günler
@@ -111,18 +125,22 @@ const SiteHeader = ({ onContactOpen }: SiteHeaderProps) => {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border/50 animate-fade-in">
             <nav className="container mx-auto px-6 py-4 flex flex-col gap-4">
-              <Link to="/gul-buketleri" className="text-foreground/70 hover:text-foreground transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>
-                Gül Buketleri
-              </Link>
-              <Link to="/orkideler" className="text-foreground/70 hover:text-foreground transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>
-                Orkideler
-              </Link>
-              <Link to="/dugun-cicekleri" className="text-foreground/70 hover:text-foreground transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>
-                Düğün Çiçekleri
-              </Link>
-              <Link to="/hediye-kutulari" className="text-foreground/70 hover:text-foreground transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>
-                Hediye Kutuları
-              </Link>
+              {[
+                { to: "/gul-buketleri", label: "Gül Buketleri" },
+                { to: "/orkideler", label: "Orkideler" },
+                { to: "/laleler", label: "Laleler" },
+                { to: "/papatyalar", label: "Papatyalar" },
+                { to: "/nergisler", label: "Nergisler" },
+                { to: "/aycicekleri", label: "Ayçiçekleri" },
+                { to: "/lavanta", label: "Lavanta" },
+                { to: "/nilufer", label: "Nilüfer" },
+                { to: "/dugun-cicekleri", label: "Düğün Çiçekleri" },
+                { to: "/hediye-kutulari", label: "Hediye Kutuları" },
+              ].map((item) => (
+                <Link key={item.to} to={item.to} className="text-foreground/70 hover:text-foreground transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>
+                  {item.label}
+                </Link>
+              ))}
               <Link to="/#hakkimizda" className="text-foreground/70 hover:text-foreground transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>
                 Hakkımızda
               </Link>
