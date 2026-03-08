@@ -1,20 +1,101 @@
 import heroFlowers from "@/assets/hero-flowers.jpg";
 import { Button } from "@/components/ui/button";
+import { Search, ShoppingBag, Menu, X } from "lucide-react";
+import { useState } from "react";
 
 const Index = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background">
-      {/* Simple Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+      {/* Glassmorphism Sticky Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-xl border-b border-border/50 shadow-sm">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <h1 className="font-display text-2xl text-foreground">Zarif Buket</h1>
+          {/* Logo */}
+          <a href="/" className="font-display text-2xl text-foreground hover:text-primary transition-colors">
+            Zarif Buket
+          </a>
+
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#" className="text-sm text-foreground/70 hover:text-foreground transition-colors">Buketler</a>
-            <a href="#" className="text-sm text-foreground/70 hover:text-foreground transition-colors">Aranjmanlar</a>
-            <a href="#" className="text-sm text-foreground/70 hover:text-foreground transition-colors">Özel Günler</a>
-            <a href="#" className="text-sm text-foreground/70 hover:text-foreground transition-colors">İletişim</a>
+            <a href="#kategoriler" className="text-sm text-foreground/70 hover:text-foreground transition-colors">
+              Kategoriler
+            </a>
+            <a href="#ozel-gunler" className="text-sm text-foreground/70 hover:text-foreground transition-colors">
+              Özel Günler
+            </a>
+            <a href="#hakkimizda" className="text-sm text-foreground/70 hover:text-foreground transition-colors">
+              Hakkımızda
+            </a>
+            <a href="#iletisim" className="text-sm text-foreground/70 hover:text-foreground transition-colors">
+              İletişim
+            </a>
           </nav>
+
+          {/* Right side icons */}
+          <div className="flex items-center gap-4">
+            <button 
+              className="p-2 text-foreground/70 hover:text-foreground transition-colors rounded-full hover:bg-foreground/5"
+              aria-label="Ara"
+            >
+              <Search size={20} />
+            </button>
+            <button 
+              className="p-2 text-foreground/70 hover:text-foreground transition-colors rounded-full hover:bg-foreground/5 relative"
+              aria-label="Sepet"
+            >
+              <ShoppingBag size={20} />
+              <span className="absolute -top-1 -right-1 w-5 h-5 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center font-medium">
+                0
+              </span>
+            </button>
+
+            {/* Mobile menu button */}
+            <button 
+              className="md:hidden p-2 text-foreground/70 hover:text-foreground transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Menü"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Navigation */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border/50">
+            <nav className="container mx-auto px-6 py-4 flex flex-col gap-4">
+              <a 
+                href="#kategoriler" 
+                className="text-foreground/70 hover:text-foreground transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Kategoriler
+              </a>
+              <a 
+                href="#ozel-gunler" 
+                className="text-foreground/70 hover:text-foreground transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Özel Günler
+              </a>
+              <a 
+                href="#hakkimizda" 
+                className="text-foreground/70 hover:text-foreground transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Hakkımızda
+              </a>
+              <a 
+                href="#iletisim" 
+                className="text-foreground/70 hover:text-foreground transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                İletişim
+              </a>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* Hero Section */}
