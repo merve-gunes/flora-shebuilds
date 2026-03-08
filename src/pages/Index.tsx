@@ -117,8 +117,18 @@ const Index = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-xl border-b border-border/50 shadow-sm">
         <div className="container mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="font-display text-xl sm:text-2xl text-foreground hover:text-primary transition-colors">
-            Zarif Buket
+          <a href="/" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
+            <svg width="26" height="26" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-foreground flex-shrink-0">
+              <path d="M16 28 Q16 22 15.5 18 Q15 16 16 14" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+              <path d="M15 20 Q10 19 9 16 Q10 17.5 14 18" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+              <path d="M16 21 Q21 20 22 17 Q21 18.5 17 19" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+              <path d="M16 14 Q16 8 16 5 Q14.5 3 13 5 Q12 7 13 10 Q14 13 16 14" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+              <path d="M16 14 Q18 10 20 7 Q21 5 20 4 Q18.5 3.5 17.5 5 Q16.5 8 16 14" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+              <path d="M16 14 Q14 10 12 7 Q11 5 12 4 Q13.5 3.5 14.5 5 Q15.5 8 16 14" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+              <path d="M13.5 11 Q11 8 10 6 Q9.5 4.5 10.5 4 Q12 4 13 6" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+              <path d="M18.5 11 Q21 8 22 6 Q22.5 4.5 21.5 4 Q20 4 19 6" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+            </svg>
+            <span className="text-xl sm:text-2xl text-foreground tracking-wider" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500 }}>FLORA</span>
           </a>
 
           {/* Desktop Navigation */}
