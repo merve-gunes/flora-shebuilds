@@ -539,11 +539,12 @@ const Index = () => {
         >
           {/* Section Header */}
           <div className="text-center mb-12 sm:mb-16">
+            <span className="text-sm tracking-[0.2em] uppercase text-primary mb-3 block">Nasıl Çalışır</span>
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-foreground mb-4">
-              Sipariş Süreci
+              3 Adımda Kapınızda
             </h2>
             <p className="text-foreground/60 max-w-md mx-auto text-sm sm:text-base">
-              Sadece 3 kolay adımda çiçekleriniz kapınızda
+              Sipariş vermek hiç bu kadar kolay olmamıştı
             </p>
           </div>
 
