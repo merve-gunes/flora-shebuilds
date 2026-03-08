@@ -54,9 +54,9 @@ import hediyeMini from "@/assets/hediye-mini.jpg";
 // Category sections data
 const categoryProducts = {
   guller: [
-    { name: "Romantik Gül Buketi", price: "₺450", image: gulRomantik },
-    { name: "Kırmızı Aşk", price: "₺550", image: gulKirmiziAsk },
-    { name: "Pembe Rüya", price: "₺400", image: gulPembeRuya },
+    { name: "Kırmızı Gül Buketi", price: "₺450", image: gulRomantik },
+    { name: "Pembe Gül Aranjmanı", price: "₺550", image: gulKirmiziAsk },
+    { name: "Beyaz Gül Buketi", price: "₺400", image: gulPembeRuya },
   ],
   orkideler: [
     { name: "Mor Orkide", price: "₺650", image: orkideMor },
