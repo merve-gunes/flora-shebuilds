@@ -2,67 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Zarif Buket - Pastel & Elegant Design System */
+/* Flora - Elegant Floral Design System */
 
 @layer base {
   :root {
-    /* Core palette - Pastel florals */
-    --background: 30 33% 98%;
-    --foreground: 150 10% 25%;
+    /* Core palette - Champagne base */
+    --background: 35 30% 97%;
+    --foreground: 150 15% 22%;
     
-    /* Soft pink accent */
-    --primary: 350 50% 80%;
-    --primary-foreground: 350 30% 20%;
-    --primary-hover: 350 55% 75%;
+    /* Dusty Rose accent */
+    --primary: 348 45% 72%;
+    --primary-foreground: 348 35% 15%;
+    --primary-hover: 348 50% 65%;
     
-    /* Sage green secondary */
-    --secondary: 140 25% 85%;
-    --secondary-foreground: 140 20% 25%;
+    /* Sage Green secondary */
+    --secondary: 145 22% 78%;
+    --secondary-foreground: 145 25% 22%;
     
-    /* Cream tones */
-    --muted: 35 30% 95%;
-    --muted-foreground: 35 15% 45%;
+    /* Champagne muted */
+    --muted: 38 28% 93%;
+    --muted-foreground: 38 12% 42%;
     
-    --accent: 140 25% 88%;
-    --accent-foreground: 140 20% 20%;
+    --accent: 145 20% 82%;
+    --accent-foreground: 145 22% 18%;
     
     /* Borders and inputs */
-    --border: 35 20% 88%;
-    --input: 35 20% 90%;
-    --ring: 350 50% 75%;
+    --border: 38 18% 85%;
+    --input: 38 18% 88%;
+    --ring: 348 45% 68%;
     
     /* Cards and surfaces */
-    --card: 30 30% 99%;
-    --card-foreground: 150 10% 25%;
+    --card: 35 28% 98%;
+    --card-foreground: 150 15% 22%;
     
-    --popover: 30 30% 99%;
-    --popover-foreground: 150 10% 25%;
+    --popover: 35 28% 98%;
+    --popover-foreground: 150 15% 22%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     
-    --radius: 0.5rem;
+    --radius: 0.75rem;
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-background: 30 30% 97%;
-    --sidebar-foreground: 150 10% 30%;
-    --sidebar-primary: 350 50% 80%;
-    --sidebar-primary-foreground: 350 30% 20%;
-    --sidebar-accent: 140 25% 90%;
-    --sidebar-accent-foreground: 140 20% 25%;
-    --sidebar-border: 35 20% 88%;
-    --sidebar-ring: 350 50% 75%;
+    --sidebar-background: 35 28% 96%;
+    --sidebar-foreground: 150 15% 28%;
+    --sidebar-primary: 348 45% 72%;
+    --sidebar-primary-foreground: 348 35% 15%;
+    --sidebar-accent: 145 22% 85%;
+    --sidebar-accent-foreground: 145 25% 22%;
+    --sidebar-border: 38 18% 85%;
+    --sidebar-ring: 348 45% 68%;
 
     /* Navigation */
-    --nav-background: 30 30% 99%;
-    --nav-foreground: 150 10% 30%;
-    --nav-hover: 350 50% 75%;
+    --nav-background: 35 28% 98%;
+    --nav-foreground: 150 15% 28%;
+    --nav-hover: 348 45% 68%;
     
     /* Status bar */
-    --status-bar: 150 15% 25%;
-    --status-bar-foreground: 30 30% 98%;
+    --status-bar: 150 18% 22%;
+    --status-bar-foreground: 35 28% 97%;
   }
 }
 
@@ -128,10 +128,10 @@
   
   /* Soft shadow for cards */
   .card-shadow {
-    box-shadow: 0 4px 20px -5px hsl(350 50% 80% / 0.2);
+    box-shadow: 0 4px 20px -5px hsl(348 45% 72% / 0.2);
   }
   
   .card-shadow:hover {
-    box-shadow: 0 20px 40px -10px hsl(350 50% 80% / 0.3);
+    box-shadow: 0 20px 40px -10px hsl(348 45% 72% / 0.3);
   }
 }
