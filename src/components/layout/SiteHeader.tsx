@@ -125,18 +125,22 @@ const SiteHeader = ({ onContactOpen }: SiteHeaderProps) => {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border/50 animate-fade-in">
             <nav className="container mx-auto px-6 py-4 flex flex-col gap-4">
-              <Link to="/gul-buketleri" className="text-foreground/70 hover:text-foreground transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>
-                Gül Buketleri
-              </Link>
-              <Link to="/orkideler" className="text-foreground/70 hover:text-foreground transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>
-                Orkideler
-              </Link>
-              <Link to="/dugun-cicekleri" className="text-foreground/70 hover:text-foreground transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>
-                Düğün Çiçekleri
-              </Link>
-              <Link to="/hediye-kutulari" className="text-foreground/70 hover:text-foreground transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>
-                Hediye Kutuları
-              </Link>
+              {[
+                { to: "/gul-buketleri", label: "Gül Buketleri" },
+                { to: "/orkideler", label: "Orkideler" },
+                { to: "/laleler", label: "Laleler" },
+                { to: "/papatyalar", label: "Papatyalar" },
+                { to: "/nergisler", label: "Nergisler" },
+                { to: "/aycicekleri", label: "Ayçiçekleri" },
+                { to: "/lavanta", label: "Lavanta" },
+                { to: "/nilufer", label: "Nilüfer" },
+                { to: "/dugun-cicekleri", label: "Düğün Çiçekleri" },
+                { to: "/hediye-kutulari", label: "Hediye Kutuları" },
+              ].map((item) => (
+                <Link key={item.to} to={item.to} className="text-foreground/70 hover:text-foreground transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>
+                  {item.label}
+                </Link>
+              ))}
               <Link to="/#hakkimizda" className="text-foreground/70 hover:text-foreground transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>
                 Hakkımızda
               </Link>
