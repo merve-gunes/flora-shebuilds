@@ -84,6 +84,7 @@ const SiteHeader = ({ onContactOpen }: SiteHeaderProps) => {
                   </div>
                 </div>
               )}
+            </div>
             <Link to="/#kategoriler" className="text-sm text-foreground/70 hover:text-foreground transition-colors">
               Özel Günler
             </Link>
