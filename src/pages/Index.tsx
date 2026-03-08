@@ -264,13 +264,13 @@ const Index = () => {
               className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight mb-6 opacity-0 animate-fade-in"
               style={{ animationDelay: "0.2s" }}
             >
-              Hayatın En Güzel Anlarını Çiçeklerle Taçlandırın
+              Doğanın Zarafeti: Flora.
             </h1>
             <p 
               className="text-base sm:text-lg md:text-xl text-foreground/70 mb-8 sm:mb-10 leading-relaxed opacity-0 animate-fade-in"
               style={{ animationDelay: "0.4s" }}
             >
-              Taze, tasarım buketler ve özel gün aranjmanları ile sevdiklerinize unutulmaz sürprizler yapın.
+              Yaşam alanlarınıza ve en özel anlarınıza çiçeklerin saf enerjisini taşıyoruz.
             </p>
             <div 
               className="opacity-0 animate-fade-in"
