@@ -730,7 +730,7 @@ const Index = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
             {/* Logo & Social */}
             <div className="flex flex-col items-center md:items-start gap-4">
-              <span className="font-display text-xl sm:text-2xl">Zarif Buket</span>
+              <span className="text-xl sm:text-2xl tracking-wider" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 500 }}>FLORA</span>
               <div className="flex items-center gap-4">
                 <a 
                   href="https://instagram.com" 
