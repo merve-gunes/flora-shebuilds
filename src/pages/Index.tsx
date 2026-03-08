@@ -12,6 +12,10 @@ import { Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState, useEffect, useRef } from "react";
+import { useCart } from "@/contexts/CartContext";
+import { useToast } from "@/hooks/use-toast";
+import CartDrawer from "@/components/cart/CartDrawer";
+import SearchModal from "@/components/search/SearchModal";
 
 const categories = [
   {
@@ -83,6 +87,22 @@ const useFadeInOnScroll = () => {
 const Index = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const { addItem, totalItems, setIsOpen: setCartOpen } = useCart();
+  const { toast } = useToast();
+
+  const handleAddToCart = (product: { name: string; price: string; image: string }) => {
+    addItem({
+      id: `index-${product.name}`,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+    });
+    toast({
+      title: "🌸 Ürün sepete eklendi!",
+      description: `${product.name} sepetinize başarıyla eklendi.`,
+    });
+  };
   
   // Fade-in refs for each section
   const categoriesSection = useFadeInOnScroll();
@@ -144,20 +164,24 @@ const Index = () => {
 
           {/* Right side icons */}
           <div className="flex items-center gap-2 sm:gap-4">
-            <button 
+            <button
+              onClick={() => setIsSearchOpen(true)}
               className="p-2 text-foreground/70 hover:text-foreground transition-colors rounded-full hover:bg-foreground/5"
               aria-label="Ara"
             >
               <Search size={20} />
             </button>
-            <button 
+            <button
+              onClick={() => setCartOpen(true)}
               className="p-2 text-foreground/70 hover:text-foreground transition-colors rounded-full hover:bg-foreground/5 relative"
               aria-label="Sepet"
             >
               <ShoppingBag size={20} />
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center font-medium">
-                0
-              </span>
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center font-medium">
+                  {totalItems}
+                </span>
+              )}
             </button>
 
             {/* Mobile menu button */}
@@ -350,7 +374,8 @@ const Index = () => {
                   <p className="text-primary font-medium mb-3">{product.price}</p>
                   <Button 
                     size="sm"
-                    className="btn-glow bg-primary hover:bg-primary-hover text-primary-foreground rounded-full transition-all duration-300"
+                    onClick={() => handleAddToCart(product)}
+                    className="btn-glow bg-primary hover:bg-primary/90 text-primary-foreground rounded-full transition-all duration-300"
                   >
                     Sepete Ekle
                   </Button>
@@ -390,7 +415,8 @@ const Index = () => {
                   <p className="text-primary font-medium mb-3">{product.price}</p>
                   <Button 
                     size="sm"
-                    className="btn-glow bg-primary hover:bg-primary-hover text-primary-foreground rounded-full transition-all duration-300"
+                    onClick={() => handleAddToCart(product)}
+                    className="btn-glow bg-primary hover:bg-primary/90 text-primary-foreground rounded-full transition-all duration-300"
                   >
                     Sepete Ekle
                   </Button>
@@ -430,7 +456,8 @@ const Index = () => {
                   <p className="text-primary font-medium mb-3">{product.price}</p>
                   <Button 
                     size="sm"
-                    className="btn-glow bg-primary hover:bg-primary-hover text-primary-foreground rounded-full transition-all duration-300"
+                    onClick={() => handleAddToCart(product)}
+                    className="btn-glow bg-primary hover:bg-primary/90 text-primary-foreground rounded-full transition-all duration-300"
                   >
                     Sepete Ekle
                   </Button>
@@ -470,7 +497,8 @@ const Index = () => {
                   <p className="text-primary font-medium mb-3">{product.price}</p>
                   <Button 
                     size="sm"
-                    className="btn-glow bg-primary hover:bg-primary-hover text-primary-foreground rounded-full transition-all duration-300"
+                    onClick={() => handleAddToCart(product)}
+                    className="btn-glow bg-primary hover:bg-primary/90 text-primary-foreground rounded-full transition-all duration-300"
                   >
                     Sepete Ekle
                   </Button>
@@ -885,6 +913,9 @@ const Index = () => {
           </div>
         </div>
       )}
+
+      <CartDrawer />
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </div>
   );
 };

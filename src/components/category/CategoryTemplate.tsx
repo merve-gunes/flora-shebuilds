@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { SlidersHorizontal, X } from "lucide-react";
 import SiteLayout from "@/components/layout/SiteLayout";
+import { useCart } from "@/contexts/CartContext";
+import { useToast } from "@/hooks/use-toast";
 
 export interface CategoryProduct {
   name: string;
@@ -25,6 +27,8 @@ const parsePrice = (price: string): number => {
 const CategoryTemplate = ({ title, subtitle, heroImage, products }: CategoryTemplateProps) => {
   const [priceRange, setPriceRange] = useState<number[]>([0, 2000]);
   const [filterOpen, setFilterOpen] = useState(false);
+  const { addItem } = useCart();
+  const { toast } = useToast();
 
   const maxPrice = useMemo(
     () => Math.max(...products.map((p) => parsePrice(p.price)), 2000),
@@ -41,6 +45,19 @@ const CategoryTemplate = ({ title, subtitle, heroImage, products }: CategoryTemp
   );
 
   const resetFilter = () => setPriceRange([0, maxPrice]);
+
+  const handleAddToCart = (product: CategoryProduct) => {
+    addItem({
+      id: `${title}-${product.name}`,
+      name: product.name,
+      price: product.price,
+      image: product.image || heroImage,
+    });
+    toast({
+      title: "🌸 Ürün sepete eklendi!",
+      description: `${product.name} sepetinize başarıyla eklendi.`,
+    });
+  };
 
   return (
     <SiteLayout>
@@ -154,6 +171,7 @@ const CategoryTemplate = ({ title, subtitle, heroImage, products }: CategoryTemp
                         <span className="text-primary font-semibold text-lg">{product.price}</span>
                         <Button
                           size="sm"
+                          onClick={() => handleAddToCart(product)}
                           className="btn-glow bg-primary hover:bg-primary/90 text-primary-foreground rounded-full transition-all duration-300"
                         >
                           Sepete Ekle
