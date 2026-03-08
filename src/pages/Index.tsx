@@ -21,17 +21,20 @@ const categories = [
   {
     image: gulBuketleri,
     title: "Aşkın Dili Güller",
-    alt: "Gül Buketleri"
+    alt: "Gül Buketleri",
+    link: "/gul-buketleri"
   },
   {
-    image: salonBitkileri,
+    image: orkideImage,
     title: "Evinize Nefes Aldırın",
-    alt: "Salon Bitkileri"
+    alt: "Orkideler",
+    link: "/orkideler"
   },
   {
-    image: dogumGunu,
+    image: dugunCicekleri,
     title: "En Mutlu Günlere",
-    alt: "Doğum Günü Aranjmanları"
+    alt: "Düğün Çiçekleri",
+    link: "/dugun-cicekleri"
   }
 ];
 
