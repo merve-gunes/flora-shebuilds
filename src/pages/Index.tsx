@@ -605,7 +605,7 @@ const Index = () => {
             <div className="relative overflow-hidden rounded-2xl shadow-xl">
               <img 
                 src={atolyeImage} 
-                alt="Zarif Buket Atölyesi" 
+                alt="Flora Atölyesi" 
                 className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
               />
               {/* Decorative overlay */}
