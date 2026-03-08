@@ -3,7 +3,7 @@ import gulBuketleri from "@/assets/gul-buketleri.jpg";
 import salonBitkileri from "@/assets/salon-bitkileri.jpg";
 import dogumGunu from "@/assets/dogum-gunu.jpg";
 import { Button } from "@/components/ui/button";
-import { Search, ShoppingBag, Menu, X, Flower2, PenLine, Truck } from "lucide-react";
+import { Search, ShoppingBag, Menu, X, Flower2, PenLine, Truck, Quote, BadgeCheck } from "lucide-react";
 import { useState } from "react";
 
 const categories = [
