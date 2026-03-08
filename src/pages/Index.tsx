@@ -83,9 +83,12 @@ const Index = () => {
             <a href="#hakkimizda" className="text-sm text-foreground/70 hover:text-foreground transition-colors">
               Hakkımızda
             </a>
-            <a href="#iletisim" className="text-sm text-foreground/70 hover:text-foreground transition-colors">
+            <button 
+              onClick={() => setIsContactModalOpen(true)}
+              className="text-sm text-foreground/70 hover:text-foreground transition-colors"
+            >
               İletişim
-            </a>
+            </button>
           </nav>
 
           {/* Right side icons */}
