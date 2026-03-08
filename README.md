@@ -1,5 +1,7 @@
 # 🌸 Flora - Boutique Flower Shop E-Commerce
 
+Canlı Uygulama:https://linea-modern-header-075.lovable.app
+
 Bu proje, **8 Mart SheBuilds** etkinliği kapsamında, **Lovable** yapay zeka geliştirme platformu kullanılarak sadece bir günde uçtan uca inşa edilmiştir.
 
 ##  Proje Özeti
