@@ -623,7 +623,7 @@ const Index = () => {
                   20 yılı aşkın süredir, doğanın en güzel renklerini evlerinize ve sevdiklerinize taşıyoruz. Her buketimiz, ustalıkla seçilmiş taze çiçeklerden özenle hazırlanır.
                 </p>
                 <p>
-                  Zarif Buket olarak, çiçekçilik geleneğini modern tasarımlarla buluşturarak her özel anınıza anlam katmayı amaçlıyoruz. Sizin mutluluğunuz, bizim ilham kaynağımız.
+                  Flora olarak, çiçekçilik geleneğini modern tasarımlarla buluşturarak her özel anınıza anlam katmayı amaçlıyoruz. Sizin mutluluğunuz, bizim ilham kaynağımız.
                 </p>
               </div>
               
