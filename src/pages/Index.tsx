@@ -87,6 +87,22 @@ const useFadeInOnScroll = () => {
 const Index = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const { addItem, totalItems, setIsOpen: setCartOpen } = useCart();
+  const { toast } = useToast();
+
+  const handleAddToCart = (product: { name: string; price: string; image: string }) => {
+    addItem({
+      id: `index-${product.name}`,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+    });
+    toast({
+      title: "🌸 Ürün sepete eklendi!",
+      description: `${product.name} sepetinize başarıyla eklendi.`,
+    });
+  };
   
   // Fade-in refs for each section
   const categoriesSection = useFadeInOnScroll();
