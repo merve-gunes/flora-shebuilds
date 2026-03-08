@@ -63,26 +63,27 @@ const SiteHeader = ({ onContactOpen }: SiteHeaderProps) => {
                 <ChevronDown size={14} className={`transition-transform duration-200 ${isCatOpen ? 'rotate-180' : ''}`} />
               </button>
               {isCatOpen && (
-              <div className="absolute top-full left-0 pt-1 z-50">
-                  {[
-                    { to: "/gul-buketleri", label: "Gül Buketleri" },
-                    { to: "/orkideler", label: "Orkideler" },
-                    { to: "/laleler", label: "Laleler" },
-                    { to: "/papatyalar", label: "Papatyalar" },
-                    { to: "/nergisler", label: "Nergisler" },
-                    { to: "/aycicekleri", label: "Ayçiçekleri" },
-                    { to: "/lavanta", label: "Lavanta" },
-                    { to: "/nilufer", label: "Nilüfer" },
-                    { to: "/dugun-cicekleri", label: "Düğün Çiçekleri" },
-                    { to: "/hediye-kutulari", label: "Hediye Kutuları" },
-                  ].map((item) => (
-                    <Link key={item.to} to={item.to} className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
-                      {item.label}
-                    </Link>
-                  ))}
+                <div className="absolute top-full left-0 pt-1 z-50">
+                  <div className="bg-background/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-xl py-2 min-w-[180px]">
+                    {[
+                      { to: "/gul-buketleri", label: "Gül Buketleri" },
+                      { to: "/orkideler", label: "Orkideler" },
+                      { to: "/laleler", label: "Laleler" },
+                      { to: "/papatyalar", label: "Papatyalar" },
+                      { to: "/nergisler", label: "Nergisler" },
+                      { to: "/aycicekleri", label: "Ayçiçekleri" },
+                      { to: "/lavanta", label: "Lavanta" },
+                      { to: "/nilufer", label: "Nilüfer" },
+                      { to: "/dugun-cicekleri", label: "Düğün Çiçekleri" },
+                      { to: "/hediye-kutulari", label: "Hediye Kutuları" },
+                    ].map((item) => (
+                      <Link key={item.to} to={item.to} onClick={() => setIsCatOpen(false)} className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </div>
+              )}
             <Link to="/#kategoriler" className="text-sm text-foreground/70 hover:text-foreground transition-colors">
               Özel Günler
             </Link>
