@@ -28,6 +28,7 @@ const App = () => (
             <Route path="/orkideler" element={<Orkideler />} />
             <Route path="/dugun-cicekleri" element={<DugunCicekleri />} />
             <Route path="/hediye-kutulari" element={<HediyeKutulari />} />
+            <Route path="/urun/:id" element={<ProductDetail />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

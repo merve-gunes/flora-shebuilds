@@ -1,12 +1,15 @@
 import { useState, useMemo } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { SlidersHorizontal, X } from "lucide-react";
 import SiteLayout from "@/components/layout/SiteLayout";
+import FloraBreadcrumb from "@/components/FloraBreadcrumb";
 import { useCart } from "@/contexts/CartContext";
 import { useToast } from "@/hooks/use-toast";
 
 export interface CategoryProduct {
+  id?: string;
   name: string;
   price: string;
   desc: string;
@@ -18,13 +21,14 @@ interface CategoryTemplateProps {
   subtitle: string;
   heroImage: string;
   products: CategoryProduct[];
+  categorySlug?: string;
 }
 
 const parsePrice = (price: string): number => {
   return parseInt(price.replace(/[^\d]/g, ""), 10) || 0;
 };
 
-const CategoryTemplate = ({ title, subtitle, heroImage, products }: CategoryTemplateProps) => {
+const CategoryTemplate = ({ title, subtitle, heroImage, products, categorySlug }: CategoryTemplateProps) => {
   const [priceRange, setPriceRange] = useState<number[]>([0, 2000]);
   const [filterOpen, setFilterOpen] = useState(false);
   const { addItem } = useCart();
@@ -48,7 +52,7 @@ const CategoryTemplate = ({ title, subtitle, heroImage, products }: CategoryTemp
 
   const handleAddToCart = (product: CategoryProduct) => {
     addItem({
-      id: `${title}-${product.name}`,
+      id: product.id || `${title}-${product.name}`,
       name: product.name,
       price: product.price,
       image: product.image || heroImage,
@@ -78,29 +82,20 @@ const CategoryTemplate = ({ title, subtitle, heroImage, products }: CategoryTemp
       {/* Content */}
       <section className="py-12 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="flex gap-8">
+          {/* Breadcrumb */}
+          <FloraBreadcrumb items={[{ label: title }]} />
+
+          <div className="flex gap-8 mt-4">
             {/* Sidebar — desktop */}
             <aside className="hidden lg:block w-56 shrink-0">
               <div className="sticky top-24 space-y-6">
                 <h3 className="font-display text-lg text-foreground">Fiyat Aralığı</h3>
-                <Slider
-                  min={0}
-                  max={maxPrice}
-                  step={50}
-                  value={priceRange}
-                  onValueChange={setPriceRange}
-                  className="mt-2"
-                />
+                <Slider min={0} max={maxPrice} step={50} value={priceRange} onValueChange={setPriceRange} className="mt-2" />
                 <div className="flex justify-between text-sm text-muted-foreground">
                   <span>₺{priceRange[0]}</span>
                   <span>₺{priceRange[1]}</span>
                 </div>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={resetFilter}
-                  className="text-xs text-muted-foreground hover:text-foreground px-0"
-                >
+                <Button variant="ghost" size="sm" onClick={resetFilter} className="text-xs text-muted-foreground hover:text-foreground px-0">
                   Filtreyi Sıfırla
                 </Button>
               </div>
@@ -111,12 +106,7 @@ const CategoryTemplate = ({ title, subtitle, heroImage, products }: CategoryTemp
               {/* Mobile filter toggle */}
               <div className="lg:hidden flex items-center justify-between mb-6">
                 <p className="text-sm text-muted-foreground">{filteredProducts.length} ürün</p>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setFilterOpen(!filterOpen)}
-                  className="gap-1.5 border-border text-foreground"
-                >
+                <Button variant="outline" size="sm" onClick={() => setFilterOpen(!filterOpen)} className="gap-1.5 border-border text-foreground">
                   <SlidersHorizontal className="h-3.5 w-3.5" />
                   Filtre
                 </Button>
@@ -131,13 +121,7 @@ const CategoryTemplate = ({ title, subtitle, heroImage, products }: CategoryTemp
                       <X className="h-4 w-4 text-muted-foreground" />
                     </button>
                   </div>
-                  <Slider
-                    min={0}
-                    max={maxPrice}
-                    step={50}
-                    value={priceRange}
-                    onValueChange={setPriceRange}
-                  />
+                  <Slider min={0} max={maxPrice} step={50} value={priceRange} onValueChange={setPriceRange} />
                   <div className="flex justify-between text-sm text-muted-foreground mt-2">
                     <span>₺{priceRange[0]}</span>
                     <span>₺{priceRange[1]}</span>
@@ -146,40 +130,53 @@ const CategoryTemplate = ({ title, subtitle, heroImage, products }: CategoryTemp
               )}
 
               {/* Item count — desktop */}
-              <p className="hidden lg:block text-sm text-muted-foreground mb-6">
-                {filteredProducts.length} ürün
-              </p>
+              <p className="hidden lg:block text-sm text-muted-foreground mb-6">{filteredProducts.length} ürün</p>
 
               {/* Product Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                {filteredProducts.map((product, index) => (
-                  <div
-                    key={index}
-                    className="group bg-card rounded-2xl overflow-hidden card-shadow transition-all duration-500 hover:-translate-y-2"
-                  >
-                    <div className="aspect-square overflow-hidden">
-                      <img
-                        src={product.image || heroImage}
-                        alt={product.name}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
-                    <div className="p-5 sm:p-6">
-                      <h3 className="font-display text-lg text-foreground mb-1">{product.name}</h3>
-                      <p className="text-muted-foreground text-sm mb-3">{product.desc}</p>
-                      <div className="flex items-center justify-between">
-                        <span className="text-primary font-semibold text-lg">{product.price}</span>
-                        <Button
-                          size="sm"
-                          onClick={() => handleAddToCart(product)}
-                          className="btn-glow bg-primary hover:bg-primary/90 text-primary-foreground rounded-full transition-all duration-300"
-                        >
-                          Sepete Ekle
-                        </Button>
+                {filteredProducts.map((product, index) => {
+                  const productLink = product.id ? `/urun/${product.id}` : undefined;
+                  const card = (
+                    <div
+                      key={index}
+                      className="group bg-card rounded-2xl overflow-hidden card-shadow transition-all duration-500 hover:-translate-y-2"
+                    >
+                      <div className="aspect-square overflow-hidden">
+                        <img
+                          src={product.image || heroImage}
+                          alt={product.name}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                      <div className="p-5 sm:p-6">
+                        <h3 className="font-display text-lg text-foreground mb-1">{product.name}</h3>
+                        <p className="text-muted-foreground text-sm mb-3">{product.desc}</p>
+                        <div className="flex items-center justify-between">
+                          <span className="text-primary font-semibold text-lg">{product.price}</span>
+                          <Button
+                            size="sm"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              handleAddToCart(product);
+                            }}
+                            className="btn-glow bg-primary hover:bg-primary/90 text-primary-foreground rounded-full transition-all duration-300"
+                          >
+                            Sepete Ekle
+                          </Button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+
+                  return productLink ? (
+                    <Link key={index} to={productLink} className="block">
+                      {card}
+                    </Link>
+                  ) : (
+                    card
+                  );
+                })}
               </div>
 
               {filteredProducts.length === 0 && (
