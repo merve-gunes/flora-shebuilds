@@ -254,50 +254,59 @@ const Index = () => {
             className="w-full h-full object-cover"
           />
           {/* Soft overlay for readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/75 to-transparent" />
         </div>
 
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 sm:px-6 pt-20">
           <div className="max-w-2xl">
-            <h1 
-              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight mb-6 opacity-0 animate-fade-in"
-              style={{ animationDelay: "0.2s" }}
+            <span 
+              className="inline-block text-sm tracking-[0.3em] uppercase text-primary mb-4 opacity-0 animate-fade-in"
+              style={{ animationDelay: "0.1s" }}
             >
-              Doğanın Zarafeti: Flora.
+              — Doğanın zarafeti
+            </span>
+            <h1 
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground leading-[1.1] mb-6 opacity-0 animate-fade-in"
+              style={{ animationDelay: "0.3s", fontFamily: "'Cormorant Garamond', serif", fontWeight: 400 }}
+            >
+              Her Çiçek Bir<br />
+              <span className="italic text-primary">Hikâye</span> Anlatır.
             </h1>
             <p 
-              className="text-base sm:text-lg md:text-xl text-foreground/70 mb-8 sm:mb-10 leading-relaxed opacity-0 animate-fade-in"
-              style={{ animationDelay: "0.4s" }}
+              className="text-base sm:text-lg md:text-xl text-foreground/60 mb-10 sm:mb-12 leading-relaxed max-w-lg opacity-0 animate-fade-in"
+              style={{ animationDelay: "0.5s" }}
             >
               Yaşam alanlarınıza ve en özel anlarınıza çiçeklerin saf enerjisini taşıyoruz.
             </p>
             <div 
-              className="opacity-0 animate-fade-in"
-              style={{ animationDelay: "0.6s" }}
+              className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in"
+              style={{ animationDelay: "0.7s" }}
             >
               <Button 
                 size="lg" 
-                className="btn-glow bg-primary hover:bg-primary-hover text-primary-foreground px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base font-medium rounded-full shadow-lg hover:shadow-[0_10px_40px_-10px_hsl(350_50%_70%)] transition-all duration-300"
+                className="btn-glow bg-primary hover:bg-primary-hover text-primary-foreground px-8 sm:px-10 py-5 sm:py-6 text-sm sm:text-base font-medium rounded-full shadow-lg hover:shadow-[0_10px_40px_-10px_hsl(348_45%_65%)] transition-all duration-300"
+                onClick={() => document.getElementById('kategoriler')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Buketleri Keşfet
+                Koleksiyonu Keşfet
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="border-foreground/20 text-foreground hover:bg-foreground/5 px-8 sm:px-10 py-5 sm:py-6 text-sm sm:text-base rounded-full transition-all duration-300"
+                onClick={() => document.getElementById('hakkimizda')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Hikâyemiz
               </Button>
             </div>
           </div>
         </div>
 
-        {/* Decorative elements */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 opacity-0 animate-fade-in" style={{ animationDelay: "1s" }}>
-          <div className="flex flex-col items-center gap-2 text-foreground/50">
-            <span className="text-sm">Keşfetmeye başla</span>
-            <svg 
-              className="w-5 h-5 animate-bounce" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
+        {/* Decorative scroll indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 opacity-0 animate-fade-in" style={{ animationDelay: "1.2s" }}>
+          <div className="flex flex-col items-center gap-2 text-foreground/40">
+            <span className="text-xs tracking-[0.2em] uppercase">Aşağı kaydır</span>
+            <div className="w-px h-8 bg-gradient-to-b from-foreground/40 to-transparent animate-bounce" />
           </div>
         </div>
       </section>
@@ -312,11 +321,12 @@ const Index = () => {
         >
           {/* Section Header */}
           <div className="text-center mb-12 sm:mb-16">
+            <span className="text-sm tracking-[0.2em] uppercase text-primary mb-3 block">Koleksiyon</span>
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-foreground mb-4">
-              Popüler Kategoriler
+              Öne Çıkan Kategoriler
             </h2>
             <p className="text-foreground/60 max-w-md mx-auto text-sm sm:text-base">
-              En sevilen çiçek ve bitki kategorilerimizi keşfedin
+              Her mevsime ve her duyguya uygun, el yapımı aranjmanlar
             </p>
           </div>
 
@@ -529,11 +539,12 @@ const Index = () => {
         >
           {/* Section Header */}
           <div className="text-center mb-12 sm:mb-16">
+            <span className="text-sm tracking-[0.2em] uppercase text-primary mb-3 block">Nasıl Çalışır</span>
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-foreground mb-4">
-              Sipariş Süreci
+              3 Adımda Kapınızda
             </h2>
             <p className="text-foreground/60 max-w-md mx-auto text-sm sm:text-base">
-              Sadece 3 kolay adımda çiçekleriniz kapınızda
+              Sipariş vermek hiç bu kadar kolay olmamıştı
             </p>
           </div>
 
@@ -614,9 +625,9 @@ const Index = () => {
 
             {/* Content */}
             <div className="lg:pl-8">
-              <span className="text-sm font-medium text-primary mb-4 block">Hakkımızda</span>
+              <span className="text-sm tracking-[0.2em] uppercase text-primary mb-4 block">Hakkımızda</span>
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-foreground mb-6 leading-tight">
-                Zanaat ve Doğanın Buluşma Noktası
+                Çiçek Sanatını Yeniden Tanımlıyoruz
               </h2>
               <div className="space-y-4 text-foreground/70 leading-relaxed">
                 <p>
