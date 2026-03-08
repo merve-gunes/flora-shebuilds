@@ -165,6 +165,24 @@ const Index = () => {
                   <Link to="/orkideler" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
                     Orkideler
                   </Link>
+                  <Link to="/laleler" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
+                    Laleler
+                  </Link>
+                  <Link to="/papatyalar" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
+                    Papatyalar
+                  </Link>
+                  <Link to="/nergisler" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
+                    Nergisler
+                  </Link>
+                  <Link to="/aycicekleri" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
+                    Ayçiçekleri
+                  </Link>
+                  <Link to="/lavanta" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
+                    Lavanta
+                  </Link>
+                  <Link to="/nilufer" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
+                    Nilüfer
+                  </Link>
                   <Link to="/dugun-cicekleri" className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors">
                     Düğün Çiçekleri
                   </Link>
