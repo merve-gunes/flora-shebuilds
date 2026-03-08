@@ -14,6 +14,12 @@ import gulBuketleri from "@/assets/gul-buketleri.jpg";
 import orkideImage from "@/assets/orkide.jpg";
 import dugunCicekleri from "@/assets/dugun-cicekleri.jpg";
 import hediyeKutusu from "@/assets/hediye-kutusu.jpg";
+import nergisImage from "@/assets/nergis.jpg";
+import laleImage from "@/assets/lale.jpg";
+import papatyaImage from "@/assets/papatya.jpg";
+import niluferImage from "@/assets/nilufer.jpg";
+import aycicegiImage from "@/assets/aycicegi.jpg";
+import lavantaImage from "@/assets/lavanta.jpg";
 
 export interface Product {
   id: string;
