@@ -2,111 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Linea E-commerce Design System - Minimalist & Modern */
+/* Zarif Buket - Pastel & Elegant Design System */
 
 @layer base {
   :root {
-    /* Core neutral palette */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 9%;
+    /* Core palette - Pastel florals */
+    --background: 30 33% 98%;
+    --foreground: 150 10% 25%;
     
-    /* Status bar */
-    --status-bar: 0 0% 0%;
-    --status-bar-foreground: 0 0% 100%;
+    /* Soft pink accent */
+    --primary: 350 50% 80%;
+    --primary-foreground: 350 30% 20%;
+    --primary-hover: 350 55% 75%;
     
-    /* Navigation */
-    --nav-background: 0 0% 100%;
-    --nav-foreground: 0 0% 20%;
-    --nav-hover: 0 0% 5%;
+    /* Sage green secondary */
+    --secondary: 140 25% 85%;
+    --secondary-foreground: 140 20% 25%;
     
-    /* Interactive elements */
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --primary-hover: 0 0% 15%;
+    /* Cream tones */
+    --muted: 35 30% 95%;
+    --muted-foreground: 35 15% 45%;
     
-    /* Subtle elements */
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 20%;
+    --accent: 140 25% 88%;
+    --accent-foreground: 140 20% 20%;
     
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
-    
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 9%;
-    
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 9%;
+    /* Borders and inputs */
+    --border: 35 20% 88%;
+    --input: 35 20% 90%;
+    --ring: 350 50% 75%;
     
     /* Cards and surfaces */
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 9%;
+    --card: 30 30% 99%;
+    --card-foreground: 150 10% 25%;
     
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 9%;
+    --popover: 30 30% 99%;
+    --popover-foreground: 150 10% 25%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     
-    --radius: 0.375rem;
+    --radius: 0.5rem;
     
     /* Transitions */
-    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-background: 0 0% 98%;
+    --sidebar-background: 30 30% 97%;
+    --sidebar-foreground: 150 10% 30%;
+    --sidebar-primary: 350 50% 80%;
+    --sidebar-primary-foreground: 350 30% 20%;
+    --sidebar-accent: 140 25% 90%;
+    --sidebar-accent-foreground: 140 20% 25%;
+    --sidebar-border: 35 20% 88%;
+    --sidebar-ring: 350 50% 75%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 0 0% 9%;
-    --foreground: 0 0% 98%;
+    /* Navigation */
+    --nav-background: 30 30% 99%;
+    --nav-foreground: 150 10% 30%;
+    --nav-hover: 350 50% 75%;
     
-    --status-bar: 0 0% 0%;
-    --status-bar-foreground: 0 0% 100%;
-    
-    --nav-background: 0 0% 9%;
-    --nav-foreground: 0 0% 80%;
-    --nav-hover: 0 0% 95%;
-    
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --primary-hover: 0 0% 90%;
-    
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 80%;
-    
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
-    
-    --accent: 0 0% 15%;
-    --accent-foreground: 0 0% 98%;
-    
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 0 0% 98%;
-    
-    --card: 0 0% 9%;
-    --card-foreground: 0 0% 98%;
-    
-    --popover: 0 0% 9%;
-    --popover-foreground: 0 0% 98%;
-    
-    --destructive: 0 62% 50%;
-    --destructive-foreground: 0 0% 98%;
+    /* Status bar */
+    --status-bar: 150 15% 25%;
+    --status-bar-foreground: 30 30% 98%;
   }
 }
 
@@ -116,6 +72,13 @@
   }
 
   body {
-    @apply bg-background text-foreground font-light;
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
   }
 }
