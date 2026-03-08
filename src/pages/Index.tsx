@@ -913,6 +913,9 @@ const Index = () => {
           </div>
         </div>
       )}
+
+      <CartDrawer />
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </div>
   );
 };
