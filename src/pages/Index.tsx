@@ -126,7 +126,7 @@ const Index = () => {
                 Kategoriler
               </a>
               <a 
-                href="#ozel-gunler" 
+                href="#kategoriler" 
                 className="text-foreground/70 hover:text-foreground transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
