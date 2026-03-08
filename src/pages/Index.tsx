@@ -32,10 +32,10 @@ const categories = [
     link: "/orkideler"
   },
   {
-    image: dugunCicekleri,
-    title: "Düğün Çiçekleri",
-    alt: "Düğün Çiçekleri",
-    link: "/dugun-cicekleri"
+    image: papatyaImage,
+    title: "Papatyalar",
+    alt: "Papatyalar",
+    link: "/papatyalar"
   }
 ];
 
