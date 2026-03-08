@@ -332,6 +332,166 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Gül Buketleri Section */}
+      <section id="gul-buketleri" className="py-16 sm:py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-foreground mb-3">
+              Gül Buketleri
+            </h2>
+            <p className="text-foreground/60 max-w-md mx-auto text-sm sm:text-base">
+              Aşkın ve tutkunun simgesi, özenle hazırlanmış gül buketlerimiz
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {categoryProducts.guller.map((product, index) => (
+              <div 
+                key={index}
+                className="group bg-card rounded-2xl overflow-hidden card-shadow transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+              >
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-5 text-center">
+                  <h3 className="font-display text-lg text-foreground mb-2">{product.name}</h3>
+                  <p className="text-primary font-medium mb-3">{product.price}</p>
+                  <Button 
+                    size="sm"
+                    className="btn-glow bg-primary hover:bg-primary-hover text-primary-foreground rounded-full transition-all duration-300"
+                  >
+                    Sepete Ekle
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Orkideler Section */}
+      <section id="orkideler" className="py-16 sm:py-20 bg-secondary/20">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-foreground mb-3">
+              Orkideler
+            </h2>
+            <p className="text-foreground/60 max-w-md mx-auto text-sm sm:text-base">
+              Zarafet ve şıklığın sembolü, uzun ömürlü orkide çeşitlerimiz
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {categoryProducts.orkideler.map((product, index) => (
+              <div 
+                key={index}
+                className="group bg-card rounded-2xl overflow-hidden card-shadow transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+              >
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-5 text-center">
+                  <h3 className="font-display text-lg text-foreground mb-2">{product.name}</h3>
+                  <p className="text-primary font-medium mb-3">{product.price}</p>
+                  <Button 
+                    size="sm"
+                    className="btn-glow bg-primary hover:bg-primary-hover text-primary-foreground rounded-full transition-all duration-300"
+                  >
+                    Sepete Ekle
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Düğün Çiçekleri Section */}
+      <section id="dugun-cicekleri" className="py-16 sm:py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-foreground mb-3">
+              Düğün Çiçekleri
+            </h2>
+            <p className="text-foreground/60 max-w-md mx-auto text-sm sm:text-base">
+              Hayatınızın en özel gününe yakışır düğün aranjmanları
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {categoryProducts.dugun.map((product, index) => (
+              <div 
+                key={index}
+                className="group bg-card rounded-2xl overflow-hidden card-shadow transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+              >
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-5 text-center">
+                  <h3 className="font-display text-lg text-foreground mb-2">{product.name}</h3>
+                  <p className="text-primary font-medium mb-3">{product.price}</p>
+                  <Button 
+                    size="sm"
+                    className="btn-glow bg-primary hover:bg-primary-hover text-primary-foreground rounded-full transition-all duration-300"
+                  >
+                    Sepete Ekle
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Hediye Kutuları Section */}
+      <section id="hediye-kutulari" className="py-16 sm:py-20 bg-secondary/20">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-foreground mb-3">
+              Hediye Kutuları
+            </h2>
+            <p className="text-foreground/60 max-w-md mx-auto text-sm sm:text-base">
+              Çiçek ve lezzetlerin bir arada olduğu özel hediye setleri
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {categoryProducts.hediye.map((product, index) => (
+              <div 
+                key={index}
+                className="group bg-card rounded-2xl overflow-hidden card-shadow transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+              >
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-5 text-center">
+                  <h3 className="font-display text-lg text-foreground mb-2">{product.name}</h3>
+                  <p className="text-primary font-medium mb-3">{product.price}</p>
+                  <Button 
+                    size="sm"
+                    className="btn-glow bg-primary hover:bg-primary-hover text-primary-foreground rounded-full transition-all duration-300"
+                  >
+                    Sepete Ekle
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Order Process Section */}
       <section className="py-16 sm:py-24 bg-background">
         <div 
