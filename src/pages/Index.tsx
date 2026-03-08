@@ -354,7 +354,7 @@ const Index = () => {
         </div>
 
         {/* Decorative scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 opacity-0 animate-fade-in" style={{ animationDelay: "1.2s" }}>
+        <div className="hidden sm:block absolute bottom-10 left-1/2 -translate-x-1/2 z-10 opacity-0 animate-fade-in" style={{ animationDelay: "1.2s" }}>
           <div className="flex flex-col items-center gap-2 text-foreground/40">
             <span className="text-xs tracking-[0.2em] uppercase">Aşağı kaydır</span>
             <div className="w-px h-8 bg-gradient-to-b from-foreground/40 to-transparent animate-bounce" />
