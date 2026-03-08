@@ -242,31 +242,47 @@ const Index = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border/50 animate-fade-in">
-            <nav className="container mx-auto px-6 py-4 flex flex-col gap-4">
+          <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border/50 animate-fade-in max-h-[80vh] overflow-y-auto">
+            <nav className="container mx-auto px-6 py-4 flex flex-col gap-1">
+              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2 px-0">Kategoriler</p>
+              {[
+                { to: "/gul-buketleri", label: "Gül Buketleri" },
+                { to: "/orkideler", label: "Orkideler" },
+                { to: "/laleler", label: "Laleler" },
+                { to: "/papatyalar", label: "Papatyalar" },
+                { to: "/nergisler", label: "Nergisler" },
+                { to: "/aycicekleri", label: "Ayçiçekleri" },
+                { to: "/lavanta", label: "Lavanta" },
+                { to: "/nilufer", label: "Nilüfer" },
+                { to: "/dugun-cicekleri", label: "Düğün Çiçekleri" },
+                { to: "/hediye-kutulari", label: "Hediye Kutuları" },
+              ].map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className="text-foreground/70 hover:text-foreground transition-colors py-2.5 border-b border-border/20 last:border-0"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <div className="h-px bg-border/30 my-2" />
               <a 
                 href="#kategoriler" 
-                className="text-foreground/70 hover:text-foreground transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Kategoriler
-              </a>
-              <a 
-                href="#kategoriler" 
-                className="text-foreground/70 hover:text-foreground transition-colors py-2"
+                className="text-foreground/70 hover:text-foreground transition-colors py-2.5"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Özel Günler
               </a>
               <a 
                 href="#hakkimizda" 
-                className="text-foreground/70 hover:text-foreground transition-colors py-2"
+                className="text-foreground/70 hover:text-foreground transition-colors py-2.5"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Hakkımızda
               </a>
               <button 
-                className="text-foreground/70 hover:text-foreground transition-colors py-2 text-left"
+                className="text-foreground/70 hover:text-foreground transition-colors py-2.5 text-left"
                 onClick={() => {
                   setIsMobileMenuOpen(false);
                   setIsContactModalOpen(true);
@@ -280,7 +296,7 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 

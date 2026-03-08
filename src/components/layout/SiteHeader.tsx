@@ -123,7 +123,7 @@ const SiteHeader = ({ onContactOpen }: SiteHeaderProps) => {
         </div>
 
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border/50 animate-fade-in">
+          <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border/50 animate-fade-in max-h-[80vh] overflow-y-auto">
             <nav className="container mx-auto px-6 py-4 flex flex-col gap-4">
               {[
                 { to: "/gul-buketleri", label: "Gül Buketleri" },
