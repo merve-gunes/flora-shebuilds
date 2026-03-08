@@ -145,13 +145,15 @@ const Index = () => {
               >
                 Hakkımızda
               </a>
-              <a 
-                href="#iletisim" 
-                className="text-foreground/70 hover:text-foreground transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
+              <button 
+                className="text-foreground/70 hover:text-foreground transition-colors py-2 text-left"
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  setIsContactModalOpen(true);
+                }}
               >
                 İletişim
-              </a>
+              </button>
             </nav>
           </div>
         )}
