@@ -2,12 +2,15 @@ import CategoryTemplate from "@/components/category/CategoryTemplate";
 import orkideImage from "@/assets/orkide.jpg";
 
 const products = [
-  { name: "Mor Orkide", price: "₺650", desc: "Tek dallı mor phalaenopsis orkide, seramik saksıda" },
-  { name: "Beyaz Elegance", price: "₺750", desc: "Çift dallı beyaz orkide, premium saksıda" },
-  { name: "Phalaenopsis", price: "₺580", desc: "Pembe phalaenopsis orkide, dekoratif saksıda" },
-  { name: "Mini Orkide Seti", price: "₺450", desc: "3 adet mini orkide, şık kutuda" },
-  { name: "Orkide Aranjmanı", price: "₺900", desc: "Çoklu orkide aranjmanı, özel tasarım saksıda" },
-  { name: "Sarı Orkide", price: "₺680", desc: "Nadir sarı orkide, cam saksıda" },
+  { name: "Mavi Orkide", price: "₺890", desc: "Nadir mavi phalaenopsis orkide, mat beyaz seramik saksıda" },
+  { name: "Beyaz Çift Dallı", price: "₺780", desc: "Çift dallı beyaz orkide, şık gümüş detaylı saksıda" },
+  { name: "Mor İmparator", price: "₺720", desc: "Tek dallı mor vanda orkide, cam vazo içinde" },
+  { name: "Pembe Prenses", price: "₺650", desc: "Pembe phalaenopsis, yosun ve dekoratif taşlarla süslenmiş" },
+  { name: "Mini Orkide Üçlüsü", price: "₺950", desc: "3 farklı renk mini orkide, ahşap tepsi üzerinde set" },
+  { name: "Sarı Güneş", price: "₺680", desc: "Sarı oncidium orkide, hasır detaylı toprak saksıda" },
+  { name: "Orkide & Sukulent Seti", price: "₺1100", desc: "Beyaz orkide ve sukulent aranjmanı, beton saksıda" },
+  { name: "Dev Beyaz Orkide", price: "₺1350", desc: "Üç dallı jumbo beyaz orkide, lüks siyah saksıda" },
+  { name: "Cattleya Orkide", price: "₺1500", desc: "Nadir cattleya türü orkide, koleksiyoncular için özel seri" },
 ];
 
 const Orkideler = () => (
