@@ -53,6 +53,7 @@ const useFadeInOnScroll = () => {
 
 const Index = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   
   // Fade-in refs for each section
   const categoriesSection = useFadeInOnScroll();
