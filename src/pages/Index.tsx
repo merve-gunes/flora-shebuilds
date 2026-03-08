@@ -6,6 +6,7 @@ import atolyeImage from "@/assets/atolye.jpg";
 import orkideImage from "@/assets/orkide.jpg";
 import dugunCicekleri from "@/assets/dugun-cicekleri.jpg";
 import hediyeKutusu from "@/assets/hediye-kutusu.jpg";
+import papatyaImage from "@/assets/papatya.jpg";
 import { Button } from "@/components/ui/button";
 import { Search, ShoppingBag, Menu, X, Flower2, PenLine, Truck, Quote, BadgeCheck, Instagram, Mail, Clock, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
