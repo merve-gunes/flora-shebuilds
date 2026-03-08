@@ -11,6 +11,7 @@ import Orkideler from "./pages/Orkideler";
 import DugunCicekleri from "./pages/DugunCicekleri";
 import HediyeKutulari from "./pages/HediyeKutulari";
 import ProductDetail from "./pages/ProductDetail";
+import GenericCategory from "./pages/GenericCategory";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,12 @@ const App = () => (
             <Route path="/orkideler" element={<Orkideler />} />
             <Route path="/dugun-cicekleri" element={<DugunCicekleri />} />
             <Route path="/hediye-kutulari" element={<HediyeKutulari />} />
+            <Route path="/laleler" element={<GenericCategory />} />
+            <Route path="/papatyalar" element={<GenericCategory />} />
+            <Route path="/nergisler" element={<GenericCategory />} />
+            <Route path="/aycicekleri" element={<GenericCategory />} />
+            <Route path="/lavanta" element={<GenericCategory />} />
+            <Route path="/nilufer" element={<GenericCategory />} />
             <Route path="/urun/:id" element={<ProductDetail />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
