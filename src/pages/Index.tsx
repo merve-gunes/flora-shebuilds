@@ -663,7 +663,7 @@ const Index = () => {
             
             {/* Testimonial Text */}
             <blockquote className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl text-foreground leading-relaxed mb-6 sm:mb-8 px-4">
-              "Eşimin doğum günü için verdiğim sipariş tam zamanında ve görseldekinden bile daha güzel geldi. Teşekkürler Zarif Buket!"
+              "Eşimin doğum günü için verdiğim sipariş tam zamanında ve görseldekinden bile daha güzel geldi. Teşekkürler Flora!"
             </blockquote>
             
             {/* Customer Info */}
