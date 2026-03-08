@@ -57,6 +57,7 @@ const Index = () => {
   // Fade-in refs for each section
   const categoriesSection = useFadeInOnScroll();
   const processSection = useFadeInOnScroll();
+  const aboutSection = useFadeInOnScroll();
   const testimonialSection = useFadeInOnScroll();
   const newsletterSection = useFadeInOnScroll();
 
