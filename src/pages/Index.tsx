@@ -6,6 +6,7 @@ import atolyeImage from "@/assets/atolye.jpg";
 import { Button } from "@/components/ui/button";
 import { Search, ShoppingBag, Menu, X, Flower2, PenLine, Truck, Quote, BadgeCheck, Instagram, Mail, Clock } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { useState, useEffect, useRef } from "react";
 
 const categories = [
