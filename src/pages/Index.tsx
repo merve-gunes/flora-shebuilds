@@ -75,9 +75,43 @@ const Index = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6 lg:gap-8">
-            <a href="#kategoriler" className="text-sm text-foreground/70 hover:text-foreground transition-colors">
-              Kategoriler
-            </a>
+            {/* Kategoriler Dropdown */}
+            <div className="relative group">
+              <button className="flex items-center gap-1 text-sm text-foreground/70 hover:text-foreground transition-colors py-2">
+                Kategoriler
+                <ChevronDown size={14} className="transition-transform duration-200 group-hover:rotate-180" />
+              </button>
+              
+              {/* Dropdown Menu */}
+              <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="bg-background/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-xl py-2 min-w-[180px]">
+                  <a 
+                    href="#kategoriler" 
+                    className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors"
+                  >
+                    Gül Buketleri
+                  </a>
+                  <a 
+                    href="#kategoriler" 
+                    className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors"
+                  >
+                    Orkideler
+                  </a>
+                  <a 
+                    href="#kategoriler" 
+                    className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors"
+                  >
+                    Düğün Çiçekleri
+                  </a>
+                  <a 
+                    href="#kategoriler" 
+                    className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary/50 transition-colors"
+                  >
+                    Hediye Kutuları
+                  </a>
+                </div>
+              </div>
+            </div>
             <a href="#kategoriler" className="text-sm text-foreground/70 hover:text-foreground transition-colors">
               Özel Günler
             </a>
