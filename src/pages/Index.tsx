@@ -625,9 +625,9 @@ const Index = () => {
 
             {/* Content */}
             <div className="lg:pl-8">
-              <span className="text-sm font-medium text-primary mb-4 block">Hakkımızda</span>
+              <span className="text-sm tracking-[0.2em] uppercase text-primary mb-4 block">Hakkımızda</span>
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-foreground mb-6 leading-tight">
-                Zanaat ve Doğanın Buluşma Noktası
+                Çiçek Sanatını Yeniden Tanımlıyoruz
               </h2>
               <div className="space-y-4 text-foreground/70 leading-relaxed">
                 <p>
