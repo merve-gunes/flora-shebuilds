@@ -337,8 +337,63 @@ const Index = () => {
         </div>
       </section>
 
+      {/* About Section */}
+      <section id="hakkimizda" className="py-16 sm:py-24 bg-secondary/20">
+        <div 
+          ref={aboutSection.ref}
+          className={`container mx-auto px-4 sm:px-6 transition-all duration-1000 ${
+            aboutSection.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            {/* Image */}
+            <div className="relative overflow-hidden rounded-2xl shadow-xl">
+              <img 
+                src={atolyeImage} 
+                alt="Zarif Buket Atölyesi" 
+                className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
+              />
+              {/* Decorative overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
+            </div>
+
+            {/* Content */}
+            <div className="lg:pl-8">
+              <span className="text-sm font-medium text-primary mb-4 block">Hakkımızda</span>
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-foreground mb-6 leading-tight">
+                Zanaat ve Doğanın Buluşma Noktası
+              </h2>
+              <div className="space-y-4 text-foreground/70 leading-relaxed">
+                <p>
+                  20 yılı aşkın süredir, doğanın en güzel renklerini evlerinize ve sevdiklerinize taşıyoruz. Her buketimiz, ustalıkla seçilmiş taze çiçeklerden özenle hazırlanır.
+                </p>
+                <p>
+                  Zarif Buket olarak, çiçekçilik geleneğini modern tasarımlarla buluşturarak her özel anınıza anlam katmayı amaçlıyoruz. Sizin mutluluğunuz, bizim ilham kaynağımız.
+                </p>
+              </div>
+              
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-4 mt-8 pt-8 border-t border-border">
+                <div className="text-center">
+                  <p className="font-display text-2xl sm:text-3xl text-primary">20+</p>
+                  <p className="text-sm text-foreground/60">Yıllık Deneyim</p>
+                </div>
+                <div className="text-center">
+                  <p className="font-display text-2xl sm:text-3xl text-primary">50K+</p>
+                  <p className="text-sm text-foreground/60">Mutlu Müşteri</p>
+                </div>
+                <div className="text-center">
+                  <p className="font-display text-2xl sm:text-3xl text-primary">100+</p>
+                  <p className="text-sm text-foreground/60">Tasarım</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Customer Testimonial Section */}
-      <section className="py-16 sm:py-24 bg-secondary/20">
+      <section className="py-16 sm:py-24 bg-background">
         <div 
           ref={testimonialSection.ref}
           className={`container mx-auto px-4 sm:px-6 transition-all duration-1000 ${
