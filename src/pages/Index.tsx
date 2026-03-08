@@ -164,20 +164,24 @@ const Index = () => {
 
           {/* Right side icons */}
           <div className="flex items-center gap-2 sm:gap-4">
-            <button 
+            <button
+              onClick={() => setIsSearchOpen(true)}
               className="p-2 text-foreground/70 hover:text-foreground transition-colors rounded-full hover:bg-foreground/5"
               aria-label="Ara"
             >
               <Search size={20} />
             </button>
-            <button 
+            <button
+              onClick={() => setCartOpen(true)}
               className="p-2 text-foreground/70 hover:text-foreground transition-colors rounded-full hover:bg-foreground/5 relative"
               aria-label="Sepet"
             >
               <ShoppingBag size={20} />
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center font-medium">
-                0
-              </span>
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center font-medium">
+                  {totalItems}
+                </span>
+              )}
             </button>
 
             {/* Mobile menu button */}
