@@ -20,19 +20,19 @@ import SearchModal from "@/components/search/SearchModal";
 const categories = [
   {
     image: gulBuketleri,
-    title: "Aşkın Dili Güller",
+    title: "Gül Buketleri",
     alt: "Gül Buketleri",
     link: "/gul-buketleri"
   },
   {
     image: orkideImage,
-    title: "Evinize Nefes Aldırın",
+    title: "Orkideler",
     alt: "Orkideler",
     link: "/orkideler"
   },
   {
     image: dugunCicekleri,
-    title: "En Mutlu Günlere",
+    title: "Düğün Çiçekleri",
     alt: "Düğün Çiçekleri",
     link: "/dugun-cicekleri"
   }
