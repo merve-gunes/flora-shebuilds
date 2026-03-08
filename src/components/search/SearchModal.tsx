@@ -2,47 +2,7 @@ import { useState, useMemo } from "react";
 import { Search, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
-
-import gulBuketleri from "@/assets/gul-buketleri.jpg";
-import orkideImage from "@/assets/orkide.jpg";
-import dugunCicekleri from "@/assets/dugun-cicekleri.jpg";
-import hediyeKutusu from "@/assets/hediye-kutusu.jpg";
-
-interface SearchProduct {
-  name: string;
-  price: string;
-  image: string;
-  category: string;
-  categorySlug: string;
-}
-
-const allProducts: SearchProduct[] = [
-  // Gül Buketleri
-  { name: "Kırmızı Aşk Buketi", price: "₺850", image: gulBuketleri, category: "Gül Buketleri", categorySlug: "/gul-buketleri" },
-  { name: "Beyaz Zarafet", price: "₺700", image: gulBuketleri, category: "Gül Buketleri", categorySlug: "/gul-buketleri" },
-  { name: "Pembe Şefkat", price: "₺620", image: gulBuketleri, category: "Gül Buketleri", categorySlug: "/gul-buketleri" },
-  { name: "Tutkulu Karışım", price: "₺950", image: gulBuketleri, category: "Gül Buketleri", categorySlug: "/gul-buketleri" },
-  { name: "Pastel Rüya", price: "₺580", image: gulBuketleri, category: "Gül Buketleri", categorySlug: "/gul-buketleri" },
-  { name: "Romantik Sepet", price: "₺1250", image: gulBuketleri, category: "Gül Buketleri", categorySlug: "/gul-buketleri" },
-  { name: "Gül & Çikolata Seti", price: "₺1100", image: gulBuketleri, category: "Gül Buketleri", categorySlug: "/gul-buketleri" },
-  // Orkideler
-  { name: "Mavi Orkide", price: "₺890", image: orkideImage, category: "Orkideler", categorySlug: "/orkideler" },
-  { name: "Beyaz Çift Dallı", price: "₺780", image: orkideImage, category: "Orkideler", categorySlug: "/orkideler" },
-  { name: "Mor İmparator", price: "₺720", image: orkideImage, category: "Orkideler", categorySlug: "/orkideler" },
-  { name: "Pembe Prenses", price: "₺650", image: orkideImage, category: "Orkideler", categorySlug: "/orkideler" },
-  { name: "Dev Beyaz Orkide", price: "₺1350", image: orkideImage, category: "Orkideler", categorySlug: "/orkideler" },
-  { name: "Cattleya Orkide", price: "₺1500", image: orkideImage, category: "Orkideler", categorySlug: "/orkideler" },
-  // Düğün Çiçekleri
-  { name: "Gelin Buketi", price: "₺850", image: dugunCicekleri, category: "Düğün Çiçekleri", categorySlug: "/dugun-cicekleri" },
-  { name: "Masa Aranjmanı", price: "₺450", image: dugunCicekleri, category: "Düğün Çiçekleri", categorySlug: "/dugun-cicekleri" },
-  { name: "Çiçek Kemeri", price: "₺1200", image: dugunCicekleri, category: "Düğün Çiçekleri", categorySlug: "/dugun-cicekleri" },
-  { name: "Gelin Arabası", price: "₺600", image: dugunCicekleri, category: "Düğün Çiçekleri", categorySlug: "/dugun-cicekleri" },
-  // Hediye Kutuları
-  { name: "Lüks Hediye Kutusu", price: "₺750", image: hediyeKutusu, category: "Hediye Kutuları", categorySlug: "/hediye-kutulari" },
-  { name: "Spa & Çiçek Seti", price: "₺850", image: hediyeKutusu, category: "Hediye Kutuları", categorySlug: "/hediye-kutulari" },
-  { name: "Doğum Günü Paketi", price: "₺700", image: hediyeKutusu, category: "Hediye Kutuları", categorySlug: "/hediye-kutulari" },
-  { name: "Anneler Günü Seti", price: "₺600", image: hediyeKutusu, category: "Hediye Kutuları", categorySlug: "/hediye-kutulari" },
-];
+import { allProducts } from "@/data/products";
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -58,7 +18,8 @@ const SearchModal = ({ isOpen, onClose }: SearchModalProps) => {
     return allProducts.filter(
       (p) =>
         p.name.toLowerCase().includes(lower) ||
-        p.category.toLowerCase().includes(lower)
+        p.category.toLowerCase().includes(lower) ||
+        p.desc.toLowerCase().includes(lower)
     );
   }, [query]);
 
@@ -68,7 +29,6 @@ const SearchModal = ({ isOpen, onClose }: SearchModalProps) => {
     <div className="fixed inset-0 z-[90] flex flex-col">
       <div className="absolute inset-0 bg-foreground/50 backdrop-blur-sm" onClick={onClose} />
       <div className="relative z-10 bg-background shadow-2xl w-full max-w-2xl mx-auto mt-20 rounded-2xl overflow-hidden animate-fade-in">
-        {/* Search Input */}
         <div className="flex items-center gap-3 px-5 py-4 border-b border-border/50">
           <Search size={20} className="text-muted-foreground shrink-0" />
           <Input
@@ -83,17 +43,16 @@ const SearchModal = ({ isOpen, onClose }: SearchModalProps) => {
           </button>
         </div>
 
-        {/* Results */}
         <div className="max-h-[50vh] overflow-y-auto">
           {query.length >= 2 && results.length === 0 && (
             <div className="p-8 text-center text-muted-foreground">
               "{query}" için sonuç bulunamadı
             </div>
           )}
-          {results.map((product, index) => (
+          {results.map((product) => (
             <Link
-              key={index}
-              to={product.categorySlug}
+              key={product.id}
+              to={`/urun/${product.id}`}
               onClick={onClose}
               className="flex items-center gap-4 px-5 py-3 hover:bg-secondary/30 transition-colors"
             >
