@@ -309,7 +309,7 @@ const Index = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 pt-20">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 pb-24 sm:pb-10">
           <div className="max-w-2xl">
             <span 
               className="inline-block text-sm tracking-[0.3em] uppercase text-primary mb-4 opacity-0 animate-fade-in"
