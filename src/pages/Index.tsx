@@ -3,6 +3,9 @@ import gulBuketleri from "@/assets/gul-buketleri.jpg";
 import salonBitkileri from "@/assets/salon-bitkileri.jpg";
 import dogumGunu from "@/assets/dogum-gunu.jpg";
 import atolyeImage from "@/assets/atolye.jpg";
+import orkideImage from "@/assets/orkide.jpg";
+import dugunCicekleri from "@/assets/dugun-cicekleri.jpg";
+import hediyeKutusu from "@/assets/hediye-kutusu.jpg";
 import { Button } from "@/components/ui/button";
 import { Search, ShoppingBag, Menu, X, Flower2, PenLine, Truck, Quote, BadgeCheck, Instagram, Mail, Clock, ChevronDown } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -26,6 +29,30 @@ const categories = [
     alt: "Doğum Günü Aranjmanları"
   }
 ];
+
+// Category sections data
+const categoryProducts = {
+  guller: [
+    { name: "Romantik Gül Buketi", price: "₺450", image: gulBuketleri },
+    { name: "Kırmızı Aşk", price: "₺550", image: gulBuketleri },
+    { name: "Pembe Rüya", price: "₺400", image: gulBuketleri },
+  ],
+  orkideler: [
+    { name: "Mor Orkide", price: "₺650", image: orkideImage },
+    { name: "Beyaz Elegance", price: "₺750", image: orkideImage },
+    { name: "Phalaenopsis", price: "₺580", image: orkideImage },
+  ],
+  dugun: [
+    { name: "Gelin Buketi", price: "₺850", image: dugunCicekleri },
+    { name: "Masa Aranjmanı", price: "₺450", image: dugunCicekleri },
+    { name: "Kapı Süsü", price: "₺350", image: dugunCicekleri },
+  ],
+  hediye: [
+    { name: "Lüks Hediye Kutusu", price: "₺750", image: hediyeKutusu },
+    { name: "Çikolatalı Set", price: "₺650", image: hediyeKutusu },
+    { name: "Mini Sürpriz", price: "₺400", image: hediyeKutusu },
+  ],
+};
 
 // Custom hook for scroll-triggered animations
 const useFadeInOnScroll = () => {
