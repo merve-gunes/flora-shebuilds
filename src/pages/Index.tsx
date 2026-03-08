@@ -105,6 +105,7 @@ const Index = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isCatOpen, setIsCatOpen] = useState(false);
   const { addItem, totalItems, setIsOpen: setCartOpen } = useCart();
   const { toast } = useToast();
 
