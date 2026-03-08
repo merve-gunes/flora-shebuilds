@@ -28,7 +28,7 @@ const SearchModal = ({ isOpen, onClose }: SearchModalProps) => {
   return (
     <div className="fixed inset-0 z-[90] flex flex-col">
       <div className="absolute inset-0 bg-foreground/50 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative z-10 bg-background shadow-2xl w-full max-w-2xl mx-auto mt-20 rounded-2xl overflow-hidden animate-fade-in">
+      <div className="relative z-10 bg-background shadow-2xl w-full max-w-2xl mx-4 sm:mx-auto mt-4 sm:mt-20 rounded-2xl overflow-hidden animate-fade-in">
         <div className="flex items-center gap-3 px-5 py-4 border-b border-border/50">
           <Search size={20} className="text-muted-foreground shrink-0" />
           <Input
