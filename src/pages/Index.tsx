@@ -223,6 +223,71 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Order Process Section */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-6">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4">
+              Sipariş Süreci
+            </h2>
+            <p className="text-foreground/60 max-w-md mx-auto">
+              Sadece 3 kolay adımda çiçekleriniz kapınızda
+            </p>
+          </div>
+
+          {/* Steps */}
+          <div className="relative max-w-4xl mx-auto">
+            {/* Connecting Line - Desktop */}
+            <div className="hidden md:block absolute top-16 left-[16.67%] right-[16.67%] h-px bg-gradient-to-r from-primary/30 via-primary to-primary/30" />
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+              {/* Step 1 */}
+              <div className="relative flex flex-col items-center text-center">
+                <div className="w-32 h-32 rounded-full bg-secondary/50 flex items-center justify-center mb-6 relative z-10 border-4 border-background shadow-lg">
+                  <Flower2 size={40} className="text-primary" strokeWidth={1.5} />
+                </div>
+                <span className="text-sm font-medium text-primary mb-2">Adım 1</span>
+                <h3 className="font-display text-xl text-foreground mb-3">
+                  Çiçeğinizi Seçin
+                </h3>
+                <p className="text-foreground/60 text-sm leading-relaxed">
+                  Geniş koleksiyonumuzdan size en uygun tasarımı bulun.
+                </p>
+              </div>
+
+              {/* Step 2 */}
+              <div className="relative flex flex-col items-center text-center">
+                <div className="w-32 h-32 rounded-full bg-secondary/50 flex items-center justify-center mb-6 relative z-10 border-4 border-background shadow-lg">
+                  <PenLine size={40} className="text-primary" strokeWidth={1.5} />
+                </div>
+                <span className="text-sm font-medium text-primary mb-2">Adım 2</span>
+                <h3 className="font-display text-xl text-foreground mb-3">
+                  Notunuzu Ekleyin
+                </h3>
+                <p className="text-foreground/60 text-sm leading-relaxed">
+                  Duygularınızı ifade eden özel mesajınızı yazın.
+                </p>
+              </div>
+
+              {/* Step 3 */}
+              <div className="relative flex flex-col items-center text-center">
+                <div className="w-32 h-32 rounded-full bg-secondary/50 flex items-center justify-center mb-6 relative z-10 border-4 border-background shadow-lg">
+                  <Truck size={40} className="text-primary" strokeWidth={1.5} />
+                </div>
+                <span className="text-sm font-medium text-primary mb-2">Adım 3</span>
+                <h3 className="font-display text-xl text-foreground mb-3">
+                  Aynı Gün Teslim
+                </h3>
+                <p className="text-foreground/60 text-sm leading-relaxed">
+                  Seçtiğiniz saat diliminde kapınıza getirelim.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
