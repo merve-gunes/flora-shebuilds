@@ -10,6 +10,7 @@ import GulBuketleri from "./pages/GulBuketleri";
 import Orkideler from "./pages/Orkideler";
 import DugunCicekleri from "./pages/DugunCicekleri";
 import HediyeKutulari from "./pages/HediyeKutulari";
+import ProductDetail from "./pages/ProductDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
