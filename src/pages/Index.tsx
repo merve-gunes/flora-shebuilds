@@ -12,6 +12,10 @@ import { Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState, useEffect, useRef } from "react";
+import { useCart } from "@/contexts/CartContext";
+import { useToast } from "@/hooks/use-toast";
+import CartDrawer from "@/components/cart/CartDrawer";
+import SearchModal from "@/components/search/SearchModal";
 
 const categories = [
   {
