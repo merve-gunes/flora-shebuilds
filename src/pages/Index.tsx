@@ -321,11 +321,12 @@ const Index = () => {
         >
           {/* Section Header */}
           <div className="text-center mb-12 sm:mb-16">
+            <span className="text-sm tracking-[0.2em] uppercase text-primary mb-3 block">Koleksiyon</span>
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-foreground mb-4">
-              Popüler Kategoriler
+              Öne Çıkan Kategoriler
             </h2>
             <p className="text-foreground/60 max-w-md mx-auto text-sm sm:text-base">
-              En sevilen çiçek ve bitki kategorilerimizi keşfedin
+              Her mevsime ve her duyguya uygun, el yapımı aranjmanlar
             </p>
           </div>
 
