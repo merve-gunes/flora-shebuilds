@@ -1,21 +1,44 @@
-# 🌸 Flora - Boutique Flower Shop E-Commerce
+# 🌸 Flora – Ruh Haline Göre Çiçek Landing Page
 
-Canlı Uygulama:https://linea-modern-header-075.lovable.app
+Flora, kullanıcılara **ruh hallerine uygun çiçekleri keşfetme** imkânı sunan hızlı ve interaktif bir landing page prototipidir. Kullanıcılar ruh hallerini seçer, onlara uygun çiçek önerisi gösterilir ve erken erişim için waitlist’e katılabilirler.
 
-Bu proje, **8 Mart SheBuilds** etkinliği kapsamında, **Lovable** yapay zeka geliştirme platformu kullanılarak sadece bir günde uçtan uca inşa edilmiştir.
+---
 
-##  Proje Özeti
-Flora, modern ve minimalist bir çiçekçi e-ticaret sitesidir. Bu çalışma, geleneksel yazılım geliştirme süreçlerini **Lovable** platformunun sağladığı yüksek hız ve yapay zeka desteğiyle birleştirerek, karmaşık kullanıcı arayüzlerini ve işlevsel akışları ne kadar kısa sürede hayata geçirebileceğimizi kanıtlamak amacıyla geliştirilmiştir.
+##  Demo
 
-##  Teknik Özellikler & Lovable Entegrasyonu
-- **Geliştirme Platformu:** [Lovable](https://lovable.dev/) ile yapay zeka destekli kod üretimi.
-- **Frontend:** React.js & Tailwind CSS.
-- **State Yönetimi:** React Hooks (`useState`, `useEffect`) ile dinamik kullanıcı etkileşimi.
-- **Veri Kalıcılığı:** LocalStorage entegrasyonu ile sayfa yenilense dahi korunan sepet verileri.
-- **Mimari:** Tam uyumlu (Responsive) mobil ve masaüstü tasarım.
+Canlı demo: [Flora Demo](https://linea-modern-header-075.lovable.app/)  
 
-##  Öne Çıkanlar
-- **AI-Driven Development:** Tasarım ve fonksiyonel gereksinimler, Lovable üzerinde stratejik prompt mühendisliği ile yönetilmiştir.
-- **Dinamik E-Ticaret Akışı:** Ürünlerin sepete eklenmesi, sepet panelinde listelenmesi ve toplam tutar hesaplaması aktif olarak çalışmaktadır.
-- **Checkout Simülasyonu:** Kullanıcı yolculuğunu tamamlamak adına veritabanı bağımsız, çalışan bir ödeme ve teslimat formu kurgulanmıştır.
 
+##  Konsept
+
+**Ruh Hali → Çiçek:** Her ruh halinin bir çiçeği vardır.  
+- Mutlu → Ayçiçeği 🌻  
+- Huzurlu → Lavanta 🌿  
+- Romantik → Gül 🌹  
+- Enerjik → Kadife Çiçeği ⚡  
+
+Kullanıcılar ruh hallerini seçerek çiçek önerisini ve anlamını görür.
+
+
+##  Özellikler
+
+- **Etkileşimli Ruh Hali Seçimi** – Kullanıcılar mevcut ruh hallerini seçer.  
+- **Dinamik Çiçek Sonucu** – Ruh haline uygun çiçek gösterilir.  
+- **Email Waitlist Formu** – Kullanıcılar erken erişim için e-posta bırakabilir.  
+- **Landing Page Düzeni** – Hero section, özellikler bölümü ve call-to-action butonları.  
+- **Yumuşak Pastel Çiçek Teması** – Modern ve minimal UI tasarımı.  
+
+---
+
+## Kullanılan Teknolojiler
+
+- **Lovable.dev / Bolt.new** – AI destekli prototipleme  
+- **HTML, CSS, JavaScript** – Frontend yapısı  
+
+
+##  Nasıl Kullanılır
+
+1. [Demo](https://linea-modern-header-075.lovable.app/)’yu açın  
+2. Mevcut ruh halinizi seçin  
+3. Çiçek önerinizi ve anlamını görün  
+4. Erken erişim için e-posta bırakın  
