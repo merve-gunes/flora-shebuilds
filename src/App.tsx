@@ -3,15 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ScrollToTop from "./components/ScrollToTop";
-import { CartProvider } from "./contexts/CartContext";
 import Index from "./pages/Index";
-import GulBuketleri from "./pages/GulBuketleri";
-import Orkideler from "./pages/Orkideler";
-import DugunCicekleri from "./pages/DugunCicekleri";
-import HediyeKutulari from "./pages/HediyeKutulari";
-import ProductDetail from "./pages/ProductDetail";
-import GenericCategory from "./pages/GenericCategory";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -19,28 +11,14 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <CartProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/gul-buketleri" element={<GulBuketleri />} />
-            <Route path="/orkideler" element={<Orkideler />} />
-            <Route path="/dugun-cicekleri" element={<DugunCicekleri />} />
-            <Route path="/hediye-kutulari" element={<HediyeKutulari />} />
-            <Route path="/laleler" element={<GenericCategory />} />
-            <Route path="/papatyalar" element={<GenericCategory />} />
-            <Route path="/nergisler" element={<GenericCategory />} />
-            <Route path="/aycicekleri" element={<GenericCategory />} />
-            <Route path="/lavanta" element={<GenericCategory />} />
-            <Route path="/nilufer" element={<GenericCategory />} />
-            <Route path="/urun/:id" element={<ProductDetail />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </CartProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
